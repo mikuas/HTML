@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An_li_form</title>
+</head>
+<body>
+    <div>
+        <h2>注册信息</h2>
+        <form>
+            <h3>个人信息</h3>
+            <label>
+                姓名:<input type="text" placeholder="请输入真实姓名"><br><br>
+            </label>
+
+            <label>
+                密码:<input type="password" placeholder="请输入密码"><br><br>
+            </label>
+
+            <label>
+                确认密码:<input type="password" placeholder="请输入确认密码"><br><br>
+            </label>
+
+            <label>
+                性别:<input type="radio" name="gender" id="man">
+                <label for="man">男</label>
+            </label>
+
+            <label>
+                <input type="radio" name="gender" id="-man">
+                <label for="-man">女</label>
+            </label>
+
+            <h3>教育经历</h3>
+            <label>
+                最高学历:
+                <select>
+                    <option>专科</option>
+                    <option>本科</option>
+                    <option>博士</option>
+                </select><br><br>
+            </label>
+
+            <label>
+                学校名称:<input type="text"><br><br>
+            </label>
+
+            <label>
+                所学专业:<input type="text"><br><br>
+            </label>
+
+            <label>
+                在校时间:
+                <select>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                </select>
+                ---
+                <select>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                </select>
+            </label>
+
+            <h3>工作经历</h3>
+            <label>
+                公司名称:<input type="text"><br><br>
+            </label>
+
+            <label>
+                工作描述:<br>
+                <textarea maxlength="200" placeholder="最多输入200字"></textarea><br><br>
+
+            <input type="checkbox">已阅读并同意以下协议:
+            </label>
+        </form>
+        <br>
+            <ul>
+                <li>
+                    <a href="https://www.bilibili.com">《用户服务协议》</a>
+                </li>
+                <li>
+                    <a href="https://www.baidu.com">《隐私政策》</a>
+                </li>
+            </ul>
+            <button>免费注册</button>
+            <button type="reset">重新填写</button>
+    </div>
+</body>
+</html>

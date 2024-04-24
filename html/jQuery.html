@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+    <div class="box">
+<!--        Hello HTML-->
+    </div>
+    <h2>静夜思</h2>
+    <h3 id="author" class="element">李白</h3>
+    <p class="lb">
+        床前明月光，疑是地上霜。<br>
+        举头望明月，低头思故乡。
+
+    </p>
+    <h2 class="rgb">李白</h2>
+    <ul id="display">
+        <li>《静夜思》</li>
+        <li>《将进酒》</li>
+        <li>《望庐山瀑布》</li>
+    </ul>
+    <h2>杜甫</h2>
+    <ul>
+        <li>《春望》</li>
+        <li>《登高》</li>
+        <li>《春夜喜雨》</li>
+    </ul>
+    <script>
+        $('.box').text('Hello jQuery').hide()
+        // 基本选择器
+        {
+        //     标签选择器                         $('标签名')
+        //     id选择器                          $('#id)
+        //     class选择器                       $('.class')
+        //     全局选择器$('*')                    选择所有元素
+        //     当前选择器$(this)                   选择正在使用的元素
+        //     并集选择器$('name1,name2,...)       一次性选择多个
+        }
+        // 加载完执行函数function() {}
+        $(document).ready(function () {
+            // 弹窗
+            // alert('古诗的作者信息:' + $('#author').text())
+        })
+        $('.element').hide()
+        // 层次选择器
+        // 后代选择器$('father son')         选择father 标签下的所有 son标签元素
+        // 子类选择器$('father>son')         选择father 标签下第一层级的 son元素
+        // 相邻选择器$('ele+ele')            选择相邻目标元素的下一个元素
+        // 兄弟选择器$('bt~bt')              选择目标元素之后的所有同级元素
+        // 所有兄弟选择器.siblings            选择目标元素的所有同级元素
+        $(document).ready(function () {
+            // $('#display li').css('color', 'red')
+            $('ul li').css('color', 'red')
+            $('.rgb+ul li').css('color', 'blue')
+        })
+    </script>
+</body>
+</html>

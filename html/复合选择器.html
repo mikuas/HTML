@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 后代选择器 */
+        div span {
+            /*color: red;*/
+        }
+        /* 子选择器 */
+        div > span {
+            color: red;
+        }
+        /* 并集选择器 */
+        br,
+        p,
+        span {
+            /*background-color: aqua;*/
+        }
+        /* 交集选择器
+            即又的关系
+        */
+        p.box {
+            color: lawngreen;
+        }
+        /* 伪类选择器 */
+        p:hover {
+            color: #d93bd2;
+        }
+        a:link{
+            color: #00ff3b;
+        }
+        a:visited {
+            color: #d93bd2;
+        }
+        a:hover {
+            color: red;
+        }
+        a:active {
+            color: #00cccc;
+        }
+        * {
+         color: orange !important;
+        }
+
+        div {
+            /*width: 500px;*/
+            /*height: 200px;*/
+            background-image: url('../pictures/ai_cc_splash@3to2x.png');
+            background-size: 500px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">超链接</a><br>
+    <span>&lt;span&gt;</span>
+    <div>
+        <span>
+            子span
+        </span>
+        <br>
+        <p class="box">Hello HTML</p>
+        <p>Hello CSS</p>
+        <p>
+            <span>
+                two_span
+            </span>
+        </p>
+    </div>
+
+</body>
+</html>

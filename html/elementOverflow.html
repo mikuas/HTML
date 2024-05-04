@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #00ff3b;
+
+            /*overflow: auto;*/
+            overflow: hidden;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: #00deff;
+            padding-top: 50px;
+            box-sizing: border-box;
+            /* 四值 从左上角顺时针赋值 没有的角于对角相同 */
+            border-radius: 100px;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*margin-top: 50px;*/
+        }
+
+        span {
+            margin: 20px;
+            line-height: 150px;
+            background-color: #00ff3b;
+        }
+
+        .length {
+            width: 200px;
+            height: 80px;
+            border-radius: 40px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--    <div>-->
+<!--        HelloHellsgtsfsfsff1234-->
+<!--    </div>-->
+
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    <div class="length">
+
+    </div>
+    <span>
+        Span
+    </span>
+</body>
+</html>

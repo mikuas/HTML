@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIV</title>
+    <style>
+        .solid {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            /* padding 默认会撑大盒子 */
+            padding: 20px;
+            border: 1px solid #00ff00;
+            /* 外边距 */
+            margin: 20px;
+        }
+
+        .dashed {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            border: 1px dashed #00deff;
+        }
+
+        .dotted {
+            width: 50px;
+            height: 50px;
+            background-color: #3f1ff3;
+            border: 1px dotted #cc00a0;
+        }
+
+        .border {
+            /*margin-top: 50px;*/
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            /* 内减模式 */
+            box-sizing: border-box;
+            margin: 20px;
+            background-color: rgba(217, 59, 210, 0.72);
+            /*border-top: 3px solid #00ff3b;*/
+            /*padding-left: 50px;*/
+            /* 盒子阴影 */
+            box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5);
+            /*box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5) inset;*/
+        }
+
+        .border p {
+            /*padding-left: 25%;*/
+            /* 顺时针 上右下左 */
+            /*border-radius: 100px;*/
+            /*padding: 10px 15px 5px 20px*/
+        }
+    </style>
+</head>
+<body>
+    <div class="solid">
+        我是是实线
+    </div>
+    <div class="dashed">
+        我是虚线
+    </div>
+    <div class="dotted">
+        我是点线
+    </div>
+    <div class="border">
+<!--        <p>-->
+        border
+<!--        </p>-->
+    </div>
+</body>
+</html>

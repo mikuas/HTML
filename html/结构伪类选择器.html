@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*li:nth-child(2),*/
+        /*:nth-child(3) {*/
+        /*    color: #00ff3b;*/
+        /*}*/
+
+        li:first-child {
+            color: pink;
+        }:nth-child(2n) {
+            color: #00ff3b;
+        }
+        :nth-child(3n) {
+            color: red;
+        }
+        :nth-child(7n) {
+            color: orange;
+        }
+
+        div::before {
+            content: 'TOM';
+        }
+        ::after {
+            content: 'JEREY';
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Hello</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>C++</li>
+        <li>C#</li>
+    </ul>
+    <div>
+        ll
+    </div>
+</body>
+</html>

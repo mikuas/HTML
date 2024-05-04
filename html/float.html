@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        .boxOne {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+
+            float: left;
+        }
+
+        .boxTwo {
+            width: 200px;
+            height: 200px;
+            background-color: #00b9b2;
+
+            /*float: left;*/
+            float: right;
+            /*clear: left;*/
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .fatherBox {
+            margin: 50px auto;
+
+            width: 1226px;
+            height: 628px;
+            background-color: #00deff;
+        }
+
+        .leftBox {
+            width: 234px;
+            height: 628px;
+            background-color: #00ff3b;
+
+            float: left;
+        }
+
+        .rightBox {
+            width: 978px;
+            height: 628px;
+            background-color: #d93bd2;
+
+            float: right;
+        }
+
+        /* 去掉第四个和第八个右侧的margin */
+        .rightBox li:nth-child(4n){
+            margin-right: 0;
+        }
+
+        .rightBox li {
+            margin: 0 14px 14px 0;
+            float: left;
+
+            width: 234px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--    <div class="boxOne">-->
+<!---->
+<!--    </div>-->
+<!--    <div class="boxTwo">-->
+<!---->
+<!--    </div>-->
+    <div class="fatherBox">
+        <div class="leftBox">
+
+        </div>
+        <div class="rightBox">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

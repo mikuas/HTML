@@ -400,13 +400,26 @@ a {
     display: block;
     width: 120px;
     height: 35px;
-    border: 2px solid #00cccc;
+    border: 1px solid #00cccc;
     text-align: center;
     line-height: 35px;
 }
 
-#bottom .right {
+#bottom .right ul {
+    display: flex;
+}
 
+#bottom .right ul li h3 {
+    margin-bottom: 16px;
+}
+
+#bottom .right ul li {
+    margin-right: 50px;
+}
+
+#bottom .right ul li a {
+    display: block;
+    margin-bottom: 8px;
 }
 
 /* edition */

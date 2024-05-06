@@ -378,34 +378,39 @@ a {
     margin-bottom: 10px;
 }
 
-/* edition */
-.wrapper {
-    margin: 0 auto;
-    width: 1200px;
-}
-
-.dwon {
+#bottom {
     padding-top: 60px;
     margin-top: 60px;
     height: 273px;
     background-color: #fff;
 }
 
-.down .left {
-    width: 440px;
-    background-color: indianred;
-}
-
-.down .right {
-
-}
-
-.down .wrapper {
+#bottom .wrapper {
     display: flex;
     justify-content: space-between;
 }
 
-.down .left p {
+#bottom .wrapper .left p {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+#bottom .wrapper .left a {
+    display: block;
+    width: 120px;
+    height: 35px;
+    border: 2px solid #00cccc;
+    text-align: center;
+    line-height: 35px;
+}
+
+#bottom .right {
+
+}
+
+/* edition */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
 }

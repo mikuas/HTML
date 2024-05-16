@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+</head>
+<body>
+    <script>
+        /* 隐式转换 */
+        // alert('1145' + 14)
+        let add = '1145' - 14
+        // alert(typeof add)
+        // alert('1146' - 1)
+        // alert('str' - 1)
+        // 转换为数字型
+/*        console.log(+'1145')
+        console.log(typeof +'1145')*/
+
+        /* 显式转换 */
+        let str = '1145'
+        console.log(str)
+        // console.log(Number(str))
+        // 只能取前面数字开头的部分
+        console.log(parseInt('str112'))
+        console.log(parseFloat('11.4514'))
+
+        let oneNum = Number(prompt('请输入第一个数:'))
+        let twoNum = Number(prompt('请输入第二个数:'))
+        alert(`两数相加的和是:${oneNum + twoNum}`)
+    </script>
+</body>
+</html>

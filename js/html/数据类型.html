@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataType</title>
+</head>
+<body>
+    <script>
+        let ipt = prompt('请输入第一个数')
+        alert(typeof ipt)
+
+        let NUM = [10, 'str', true, null, undefined]
+        // alert(typeof NUM[2])
+        // 布尔类型
+        let isCool = true
+        console.log(isCool)
+
+        // 未定义类型
+        let un = undefined
+        let num
+        console.log(un, num)
+
+        // null 空类型
+        console.log(null)
+
+        let str1 = 'String'
+        let str2 = "StrIng"
+        let str3 = `StRiNg`
+        console.log(str3)
+
+        console.log('鸡你"太美"')
+        console.log("鸡你'太美'")
+        console.log("鸡你\"太美\"")
+        let age = 24
+        // 字符串的拼接
+        // alert('我今年' + age + '岁了')
+        // 模板字符串
+        // alert(`我今年${age}岁了`)
+        // 弱数据类型语言
+        console.log(1 + 1)
+        console.log(2 * 2)
+        console.log(4 % 2)
+        console.log(1 / 2)
+        console.log(3 % 5) // 求余数 3
+        // let Num = prompt('请输入圆的半径')
+        let result = 3.14 * Num * Num
+        document.write(result)
+        // NaN 代表一个计算错误 它是一个不正确的或者一个未定义的数学操作所得到的结果
+        console.log('Not a Number' - 2)
+        // NaN 是粘性的 任何对NaN的操作都会返回NaN
+        console.log(NaN + 2)
+    </script>
+</body>
+</html>

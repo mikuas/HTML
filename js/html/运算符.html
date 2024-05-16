@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let num = 1
+        // 前置自增
+        // console.log(++num + 2) // 结果是4
+        /* 此时i = 2*/
+        /* i先自加, 变成2之后, 在和后面的2相加 */
+        // 后置自增
+        // console.log(num++ + 2) // 结果是3
+        /* 此时i = 1 */
+        /* 先和2相加, 先运算输出完毕后, i再自加是2 */
+        // console.log(num++ + ++num + num)
+        // console.log(3 >= 5)
+        // console.log(3 == '3')
+        // console.log(3 === '3')
+        // console.log('ab' > 'aad')
+        console.log(num > 5 && num < 10)
+        num = +prompt('请输入一个数:')
+        alert(num % 4 === 0 && num % 100 !== 0)
+    </script>
+</body>
+</html>

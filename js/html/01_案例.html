@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        /* 合并边框 */
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            /*height: 80px;*/
+        }
+
+        .box th, td {
+            padding: 10px 30px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // 用户输入
+        // let price = parseFloat(prompt('请输入商品价格'))
+        let price = +prompt('请输入商品价格')
+        let commodityNum = +prompt('请输入商品要购买的数量:')
+        let address = prompt('请输入收货地址')
+
+        // 计算价格
+        let allPrice = price * commodityNum
+        // console.log(price)
+        document.write(`
+            <div class="box">
+                <h2>订单付款确认页面</h2>
+                <table>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>商品数量</th>
+                        <th>总价</th>
+                        <th>收货地址</th>
+                    </tr>
+                    <tr>
+                        <td>HuaWei Meta 1145 Pro</td>
+                        <td>${price}元</td>
+                        <td>${commodityNum}</td>
+                        <td>${allPrice}</td>
+                        <td>${address}</td>
+                    </tr>
+                </table>
+           </div>
+        `)
+    </script>
+</body>
+</html>

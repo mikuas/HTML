@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let arg = [
+            21,
+            22,
+            53,
+            80,
+            443,
+            'miku'
+        ]
+        // let arr = new Array(false)
+        // alert(arg)
+
+        // 遍历数组
+        for (let i = 0; i < arg.length; i++) {
+            document.write(`${arg[i]}<br>`)
+        }
+        // 数组求和
+        /*let sum = 0
+        arg = [2, 6, 1, 7, 4]
+        for (let i = 0; i < arg.length; i++) {
+            sum += arg[i]
+        }
+        alert(`和${sum}`)
+        alert(`平均值${sum / arg.length}`)*/
+
+        // 求最大值
+/*        arg = [2, 6, 1, 77, 52, 25, 7, 100, 0]
+        for (let i = 1; i < arg.length; i++) {
+            if (arg[0] < arg[i]) {
+                let element = arg[0]
+                arg[0] = arg[i]
+                arg[i] = element
+            }
+        }
+        alert(`最大值:${arg[0]}`)
+
+        // 求最小值
+        for (let i = 1; i < arg.length; i++) {
+            if (arg[0] > arg[i]) {
+                let element = arg[0]
+                arg[0] = arg[i]
+                arg[i] = element
+            }
+        }
+        alert(`最小值:${arg[0]}`)
+        alert(arg)*/
+        arg = [2, 6, 1, 77, 52, 25, 7, 100, 0]
+        let max = arg[0]
+        let min = arg[0]
+        for (let i = 1; i < arg.length; i++) {
+            // 求最大值
+            if (max < arg[i]) {
+                max = arg[i]
+            }
+            // 求最小值
+            if (min > arg[i]) {
+                min = arg[i]
+            }
+        }
+        alert(`最大值是:${max}`)
+        alert(`最小值是:${min}`)
+
+        alert(arg)
+    </script>
+</body>
+</html>

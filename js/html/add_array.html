@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+    <script>
+        /*let arg = []
+        len = arg.push(1, 3 ,5, 7)
+        alert(arg)
+        alert(len)
+
+        len = arg.unshift(100, 114, 5)
+        alert(arg)
+        alert(len)*/
+
+        let arg = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7, 10]
+        let newArg = []
+        for (let i = 0; i < arg.length; i++) {
+            if (arg[i] >= 10) {
+                newArg.push(arg[i])
+            }
+        }
+        alert(newArg)
+
+        newArg = []
+        for (let i = 0; i < arg.length; i++) {
+            if (arg[i] !== 0) {
+                newArg.push(arg[i])
+            }
+        }
+        alert(newArg)
+
+        arg = ['ikun', 'false', 'true', 'stay']
+        // console.log(arg.pop())
+        // console.log(arg)
+        //
+        // console.log(arg.shift())
+        // console.log(arg)
+
+        arg = ['ikun', 'false', 'true', 'stay']
+
+        console.log(arg.splice(1, 1))
+        console.log(arg)
+    </script>
+</body>
+</html>

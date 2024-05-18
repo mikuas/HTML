@@ -15,11 +15,6 @@ JavaScritp的组成
 
 遵循小驼峰命名法
 
-#### 数组(Array)
-
-声明数组(有序)
->let 数组名 = [数据1, 数据2, ..., 数据n]
-
 #### 获取数组中数据个数
 `container.length`
 
@@ -151,9 +146,54 @@ parseFloat(数据) 可以保留小数
 >找到跟小括号里数据全部相等的case值,并执行对应代码 \
 若没有全等===的执行default里的代码 [一般用于等值判断]
 
+---
+
 ### 循环语句
 * 断点调试
-* while循环
+* while循环 语法:
+`while (条件) {循环体}`
+>while (true) 无限循环
+
+#### 退出循环
+* break:  退出循环
+* continue:    结束本次循环,继续下次循环
+
+### for循环
+语法:
+`for (变量起始值; 终止条件; 变量变化值) {}`
+>for (;;) 无限循环
+
+---
+
+### 数组(Array)
+>数组:  是一种可以按顺序保存数据的数据类型[支持下标|索引]
+
+声明数组
+
+`let array = [数据1, 数据2, ..., 数据n]`
+
+`let array = new Array(数据1, 数据2, ..., 数据n)`
+
+### 更改数组元素
+`array`[index] = `element`
+
+### 新增元素
+`array`.push(element1, element2, ...)
+>将一个或多个元素添加到数组的'末尾',并返回该数组的新'长度'
+
+`array`.unshift(element1, element2, ...)
+>将一个或多个元素添加到数组的'开头',并返回该数组的新'长度'
+
+### 删除元素
+`arrary`.pop()
+>从数组中删除最后一个元素,并返回该元素的值
+
+`arrary`.shift()
+>从数组中删除第一个元素,并返回该元素的值
+
+`arrary`.splice(start, deleteCount)
+>start起始下标, deleteCount删除个数,返回数组,数组内容是被删的元素
+
 
 
 

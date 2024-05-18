@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+</head>
+<body>
+    <script>
+        /*switch (true) {
+            case false:
+                alert(false)
+                break
+            case 0:
+                alert(0)
+                break
+            default:
+                alert('stay cool')
+                // break
+        }*/
+        let numOne = +prompt('请输入第一个数:')
+        let numTwo = +prompt('请输入第二个数:')
+        let sign = prompt('请输入运算符号(仅支持+-*/):')
+        switch (sign) {
+            case '+':
+                alert(`${numOne}+${numTwo}=${numOne + numTwo}`)
+                break
+            case '-':
+                alert(`${numOne}-${numTwo}=${numOne - numTwo}`)
+                break
+            case '*':
+                alert(`${numOne}*${numTwo}=${numOne * numTwo}`)
+                break
+            case '/':
+                alert(`${numOne}/${numTwo}=${numOne / numTwo}`)
+                break
+            default:
+                alert('输入有误,请重新输入!')
+        }
+    </script>
+</body>
+</html>

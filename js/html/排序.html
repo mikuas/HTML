@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arg = []
+        // 排序
+        for (let i = 1; i <= 5; i++) {
+            arg.push(+prompt('请输入数字'))
+        }
+        let result = prompt('请选择排序顺序down(高到低)up(低到高)')
+        switch (result) {
+            case 'down':
+                for (let i = 0; i < arg.length; i++) {
+                    for (let j = i + 1; j < arg.length; j++) {
+                        let element = 0
+                        /* 从 大到小 排序 */
+                        // 如果i号元素 比 j号元素小
+                        if (arg[i] < arg[j]) {
+                            element = arg[i]
+                            // 就把i号元素 和 j号元素互换位置
+                            arg[i] = arg[j]
+                            arg[j] = element
+                        }
+                    }
+                }
+                break
+            case 'up':
+                for (let i = 0; i < arg.length; i++) {
+                    for (let j = i + 1; j < arg.length; j++) {
+                        let element = 0
+                        /* 从 小到大 排序 */
+                        // 如果i号元素 比 j号元素大
+                        if (arg[i] > arg[j]) {
+                            element = arg[i]
+                            // 就把i号元素 和 ji号元素互换位置
+                            arg[i] = arg[j]
+                            arg[j] = element
+                        }
+                    }
+                }
+                break
+            default:
+                alert('输入有误,请重新输入!')
+        }
+        alert(arg)
+    </script>
+</body>
+</html>

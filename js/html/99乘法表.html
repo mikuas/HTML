@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            display: inline-block;
+            border: 1px solid dodgerblue;
+            width: 100px;
+            text-align: center;
+            font-size: 24px;
+            padding: 5px 10px;
+            background-color: rgba(255, 192, 203, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // while 99乘法表
+        let a = 1
+        let b
+        while (a < 10) {
+            b = 1
+            while (b <= a) {
+                document.write(`<span>${b}x${a}=${b * a}</span>`)
+                b++
+                if (b > a) {
+                    document.write('<br>')
+                }
+            }
+            a++
+        }
+        // for 99乘法表
+        for (let a = 1; a < 10; a++) {
+            document.write('<br>')
+            for (let b = 1; b <= a; b++) {
+                document.write(`<span>${b}x${a}=${b * a}</span>`)
+            }
+        }
+    </script>
+</body>
+</html>

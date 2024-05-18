@@ -7,9 +7,20 @@
 <body>
     <script>
         let arg = []
-        // 排序
+        // 选择排序
         for (let i = 1; i <= 5; i++) {
-            arg.push(+prompt('请输入数字'))
+            let type = prompt('请输入数字:')
+            // isNaN 判断输入的数是否为数字类型
+            if (isNaN(Number(type))) {
+                alert('请输入数字!')
+                i -= 1
+            //     判断输入的内容是否为空
+            } else if (type === '') {
+                alert('请输入数字:')
+                i -= 1
+            } else {
+                arg.push(type)
+            }
         }
         let result = prompt('请选择排序顺序down(高到低)up(低到高)')
         switch (result) {
@@ -47,6 +58,29 @@
                 alert('输入有误,请重新输入!')
         }
         alert(arg)
+
+        for (let i = 0; i < arg.length; i++) {
+            console.log(arg[i])
+        }
+
+        // 冒泡排序
+/*        let arr = [5, 4, 3, 2, 1, 2]
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let element = 0
+                    element = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = element
+
+                }
+            }
+        }
+        alert(arr)
+
+        for (let i = 0; i < arg.length; i++) {
+            console.log(arg[i])
+        }*/
     </script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            width: 700px;
+            /*height: 300px;*/
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            align-items: flex-end;
+            justify-content: space-around;
+            text-align: center;
+            margin: 50px auto 0;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+            margin-top: -35px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let arg = []
+        for (let i = 1; i < 5; i++) {
+            arg.push(prompt(`请输入第${i}季度的数据:`))
+        }
+        // alert(arg)
+        document.write(`<div class="box">`)
+        for (let i = 0; i < arg.length; i++) {
+            document.write(`
+            <div style="height: ${arg[i]}px">
+                <span>${arg[i]}</span>
+                <h4>${i + 1}</h4>
+            </div>
+            `)
+        }
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

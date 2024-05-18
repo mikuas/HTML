@@ -194,9 +194,19 @@ parseFloat(数据) 可以保留小数
 `arrary`.splice(start, deleteCount)
 >start起始下标, deleteCount删除个数,返回数组,数组内容是被删的元素
 
+### 数组排序
 
+`arrary`.sort()
 
+// 升序
+`arr.sort(function (a, b) {
+    return a - b
+}`
 
+//降序
+`arr.sort(function (a, b) {
+    return b -a
+}`
 
 
 

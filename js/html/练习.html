@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = []
+        let newAge = []
+        let allAge = 0
+        let ageMax
+        let ageMin
+        // 通过循环 5 次取得5次年龄数据
+        for (let i = 0; i < 5; i++) {
+            let age = +prompt('请输入年龄:')
+            // 判断用户输入的是否是数字
+            if (!isNaN(age)) {
+                // 是的话就添加到 arr
+                arr.push(age)
+
+                // 判断 age 是否大于 18 是的话就添加进 nerAge
+                if (age >= 18) {
+                    newAge.push(age)
+                }
+                // 通过 allAge 加每一次输入的年龄 得到总年龄
+                allAge += age
+                // 通过取得 arr 的第一位元素 赋值
+                if (i === 0) {
+                    ageMax = arr[0]
+                    ageMin = arr[0]
+                }
+                // 去和其他的元素比较 获取年龄的 最大值 | 最小值
+                if (ageMax < arr[i]) {
+                    ageMax = arr[i]
+                } else if (ageMin > arr[i]) {
+                    ageMin = arr[i]
+                }
+            } else {
+                // 不是就弹出提示信息
+                alert('请输入有效年龄!')
+                // i -= 1 是因为执行了一次 i 已经加了 1 但是输入的不是数字类型 所以要减去这一次的输入
+                i -= 1
+            }
+        }
+        alert(`成年人岁数:${newAge}`)
+        alert(`总年龄:${allAge}`)
+        alert(`平均年龄:${allAge / arr.length}`)
+        alert(`最大年龄:${ageMax}`)
+        alert(`最小年龄:${ageMin}`)
+    </script>
+</body>
+</html>

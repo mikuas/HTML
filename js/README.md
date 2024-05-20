@@ -256,4 +256,50 @@ min = parseInt(allSecond / 60 % 60)
 
 second = parseInt(allSecond % 60)
 
+### 对象
+
+声明对象
+
+let objectName = {}
+
+let objectName = new Object()
+
+#### 查找
+
+objectName.属性
+
+objectName['属性']
+
+#### 修改
+
+objectName.属性 = newValue
+
+#### 新增
+
+objectName.属性 = newValue
+
+#### 删除
+
+delete objectName.属性
+
+#### 对象
+
+`for (let key in object) {}`
+
+### 内置对象-Math
+
+| 方法     | 功能                      |
+|--------|-------------------------|
+| random | 生成0-1之间的随机数(包含开始,不包含结束) |
+| ceil   | 向上取整                    |
+| floor  | 向下取整                    |
+| max    | 找最大数                    |
+| min    | 找最小数                    |
+| pow    | 幂运算                     |
+| abs    | 绝对值                     |
+
+
+
+
+
 

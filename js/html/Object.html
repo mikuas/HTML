@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid #000000;
+            /* border合并 */
+            border-collapse: collapse;
+        }
+
+        th, tr, td {
+            padding: 6px 20px;
+        }
+
+        tr:nth-child(1) {
+            background-color: rgba(196, 196, 196, 0.73);
+        }
+
+        tr:not(:nth-child(1)):hover {
+            background-color: rgba(196, 196, 196, 0.73);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <script>
+            let students = [
+                {name: '小明', age: 18, gender: '男', hometown: '江西省'},
+                {name: '小红', age: 19, gender: '女', hometown: '河南省'},
+                {name: '小丽', age: 20, gender: '女', hometown: '山东省'},
+                {name: '小李', age: 24, gender: '男', hometown: 'ko币省'},
+                {name: '小天', age: 25, gender: '女', hometown: '河北省'}
+            ]
+
+        function getInfo(arr) {
+            arr = arr || []
+            for (let i = 0; i < arr.length; i++) {
+                document.write(`<tr>
+                    <td>${i + 1}</td>`)
+
+                for (let key in arr[i]) {
+                    console.log(arr[i][key])
+                    document.write(`
+                        <td>${arr[i][key]}</td>
+<!--                        <td>${arr[i][key]}</td>-->
+<!--                        <td>${arr[i][key]}</td>-->
+<!--                        <td>${arr[i][key]}</td>-->
+                    `)
+                }
+                document.write('</tr>')
+            }
+        }
+
+        getInfo(students)
+        </script>
+    </table>
+    <script>
+        /*// 声明对象
+        let obj = {
+            name: 'miku',
+            age: 18,
+            gender: '女'
+        }
+
+        console.log(obj)
+
+        let goods = {
+            name: null,
+            num: null,
+            weight: null,
+            address: null
+        }
+
+        console.log(goods)
+
+        // 查询
+        console.log(goods.name)
+        console.log(goods['name'])
+
+        // 修改
+        goods.name = 'miku'
+        console.log(goods.name)
+        // 新增
+        goods.hobby = 'rap'
+        console.log(goods.hobby)
+        // 删除
+        delete goods.hobby
+        console.log(goods)*/
+
+/*        let obj = {
+            uname: 'admin',
+            // 方法
+            seyHai: function () {
+                alert('Hi~~~~')
+            },
+            gender: 18
+        }
+        // 调用 obj.seyHai
+        obj.seyHai()
+
+        arr = [1, 2, 3, 4, 5]
+        // 遍历对象 for in
+        for (let key in arr) {
+            console.log(arr[key]) // 数组下标 索引号 但是是字符串
+        }
+        for (let key in obj) {
+            console.log(obj[key])
+        }*/
+
+        // let students = [
+        //     {name: '小明', age: 18, gender: '男', hometown: '江西省'},
+        //     {name: '小红', age: 19, gender: '女', hometown: '河南省'},
+        //     {name: '小丽', age: 20, gender: '女', hometown: '山东省'},
+        //     {name: '小李', age: 24, gender: '男', hometown: 'ko币省'},
+        // ]
+        //
+        // function getInfo(arr) {
+        //     arr = arr || []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         for (let key in arr[i]) {
+        //             console.log(arr[i][key])
+        //         }
+        //     }
+        // }
+        //
+        // getInfo(students)
+    </script>
+</body>
+</html>

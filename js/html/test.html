@@ -9,10 +9,23 @@
 </head>
 <body>
     <script>
-        let age = 18
+        let students = [
+            {name: '小明', age: 18, gender: '男', hometown: '江西省'},
+            {name: '小红', age: 19, gender: '女', hometown: '河南省'},
+            {name: '小丽', age: 20, gender: '女', hometown: '山东省'},
+            {name: '小李', age: 24, gender: '男', hometown: 'ko币省'},
+        ]
 
-        console.log(true && age++)
-        console.log(age)
+        function getInfo(arr) {
+            arr = arr || []
+            for (let i = 0; i < arr.length; i++) {
+                for (let key in arr[i]) {
+                    console.log(arr[i][key])
+                }
+            }
+        }
+
+        getInfo(students)
     </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+/*        let se = +prompt('请输入秒:')
+        function getTime(time) {
+            let hour = parseInt(time / 60 / 60 % 24)
+            let min = parseInt(time / 60 % 60)
+            let second = parseInt(time % 60)
+
+            hour = hour < 10 ? '0' + hour : hour
+            min = min < 10 ? '0' + min : min
+            second  = second < 10 ? '0' : second
+
+            return `${time}秒转换为时分秒后是:${hour}时${min}分${second}秒`
+        }
+        document.write(getTime(se))*/
+
+        function hasArr(element, arr) {
+            element = element || ''
+            arr = arr || []
+            /* test */
+            // in [在]
+            // return element in arr;
+            let flag = false
+            for (let i = 0; i < arr.length; i++) {
+                if (element === arr[i]) {
+                    flag = true
+                    break
+                }
+            }
+            return flag
+        }
+
+        // console.log(hasArr(5, [1, 2, 3, 4, 5]))
+        // console.log(hasArr())
+        // alert(2 in [1, 2,])
+
+        function findIndex(element, arr) {
+            element = element || ''
+            arr = arr || []
+            let index = 'No Index'
+            for (let i = 0; i < arr.length; i++) {
+                if (element === arr[i]) {
+                    index = i
+                    break
+                }
+            }
+            return index
+        }
+        console.log(findIndex('output', ['index', 'find', 'true', 'false', 'output']))
+    </script>
+</body>
+</html>

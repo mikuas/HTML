@@ -17,16 +17,69 @@
             document.write('Hi~~~')
         }
 */
-        function getSum(num1, num2 ) { //形参
+        function getSum(num1 = 0, num2 = 0 ) { //形参
             let sum = 0
             for (num1; num1 <= num2; num1++) {
                 sum += num1
             }
-            alert(sum)
+            document.write(`${num1} ~ ${num2}的和是${sum}`)
         }
         // sayHi()
-        getSum(1, 100) // 实参
-        getSum(num2 = 100, num1 = 1)
+       /* getSum(1, 100) // 实参
+        getSum(num2 = 100, num1 = 1)*/
+
+        // getSum(1, 100)
+        function getArrSum(arr = []) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            alert(sum)
+        }
+
+        let arr = [1, 2, 3, 4, 5]
+
+        // getArrSum(arr)
+
+        function getAdd(x, y) {
+            return x + y
+        }
+
+        // alert(getAdd(1, 5))
+
+        function getMax(x, y) {
+            return x > y ? x : y
+        }
+
+        // console.log(getMax(100, 411))
+
+        function getArrValue(arr = [], sort = true) {
+            let Max = arr[0]
+            let Min = arr[0]
+            for (let i =0 ; i < arr.length; i++) {
+                if (arr[i] > Max) {
+                    Max = arr[i]
+                } else {
+                    Min = arr[i]
+                }
+            }
+            return sort ? Max : Min
+        }
+
+        arr = [11, 22, 114, 0 ,1, 0, -114]
+        console.log(getArrValue(arr))
+        console.log(getArrValue(arr, false))
+
+        fc = function () {
+            return NaN
+        };
+
+        // console.log(fc())
+
+        (function () {
+            console.log('function')
+        })()
+
     </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let age = 18
+/*        console.log(false && age++) // ag++ 不执行 一假则假 如果两侧都为正 则返回最后一个真值
+        console.log(age)*/
+
+        console.log(11 || age++) // 输出第一个真, 后面的不执行
+        console.log(age)
+
+        function fc(x ,y) {
+            x = x || 0
+            y = y || 0
+            console.log(x, y)
+            console.log(x + y)
+        }
+
+        fc()
+    </script>
+</body>
+</html>

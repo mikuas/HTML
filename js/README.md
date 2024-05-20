@@ -120,6 +120,13 @@ parseFloat(数据) 可以保留小数
 * 逻辑或(||)
 * 逻辑非(!)
 
+逻辑运算符里的短路
+
+| 符号   | 短路条件        |
+|------|-------------|
+| &&   | 左边为false就短路 |
+| \|\| | 左边为true就短路  |
+
 ### 运算符优先级
 
 | 优先级 | 运算符   | 顺序            |
@@ -211,6 +218,7 @@ parseFloat(数据) 可以保留小数
 ### 函数
 
 声明: function f_name () { ... }
+>两个相同的函数后面的会覆盖前面的函数
 
 ##### 命名规范
 * 和变量命名基本一致
@@ -228,7 +236,24 @@ parseFloat(数据) 可以保留小数
 | set  | 设置某个值       |
 | load | 加载某些数据      |
 
+#### 函数的返回子(return)
 
+>return后面的代码不会执行
 
+返回多个值
+>return [ele1, ele2]
+
+### 匿名函数
+name = function (ele) {code}
+
+#### 立即执行函数
+(function (ele) {code})() -> 相当于实参;
+
+##### 时分秒计算公式
+hour = parseInt(allSecond / 60 / 60 % 24)
+
+min = parseInt(allSecond / 60 % 60)
+
+second = parseInt(allSecond % 60)
 
 

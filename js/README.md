@@ -135,7 +135,7 @@ parseFloat(数据) 可以保留小数
 | 2   | 一元运算符 | ++ -- !       |
 | 3   | 算数运算符 | 先* / % 后+ -   |
 | 4   | 关系运算符 | \> >= < <=    |
-| 5   | 相等运算符 | == != === !== | 
+| 5   | 相等运算符 | == != === !== |
 | 6   | 逻辑运算符 | 先&&后\|\|      |
 | 7   | 赋值运算符 | =             |
 | 8   | 逗号运算符 | ,             |
@@ -158,8 +158,11 @@ parseFloat(数据) 可以保留小数
 ### 循环语句
 * 断点调试
 * while循环 语法:
-`while (条件) {循环体}`
->while (true) 无限循环
+>~~~javascript
+>while (条件) {
+>    满足条件执行的代码
+>}
+>~~~
 
 #### 退出循环
 * break:  退出循环
@@ -167,7 +170,13 @@ parseFloat(数据) 可以保留小数
 
 ### for循环
 语法:
-`for (变量起始值; 终止条件; 变量变化值) {}`
+
+~~~javascript
+for (变量起始值; 终止条件; 变量变化值) {
+    代码段
+}
+~~~
+
 >for (;;) 无限循环
 
 ---
@@ -175,14 +184,19 @@ parseFloat(数据) 可以保留小数
 ### 数组(Array)
 >数组:  是一种可以按顺序保存数据的数据类型[支持下标|索引]
 
-声明数组
+#### 声明数组
 
-`let array = [数据1, 数据2, ..., 数据n]`
+~~~javascript
+let array = [数据1, 数据2, ..., 数据n]
 
-`let array = new Array(数据1, 数据2, ..., 数据n)`
+let array = new Array(数据1, 数据2, ..., 数据n)
+~~~
 
 ### 更改数组元素
-`array`[index] = `element`
+
+~~~javascript
+array[index] = element
+~~~
 
 ### 新增元素
 `array`.push(element1, element2, ...)
@@ -203,17 +217,19 @@ parseFloat(数据) 可以保留小数
 
 ### 数组排序
 
-`arrary`.sort()
-
+~~~javascript
+arrary.sort()
 // 升序
-`arr.sort(function (a, b) {
+array.sort(function (a, b) {
     return a - b
-}`
-
+})
 //降序
-`arr.sort(function (a, b) {
-    return b -a
-}`
+array.sort(function (a, b) {
+    return b - a
+})
+~~~
+
+
 
 ### 函数
 
@@ -258,33 +274,47 @@ second = parseInt(allSecond % 60)
 
 ### 对象
 
-声明对象
+#### 声明对象
 
+~~~javascript
 let objectName = {}
 
 let objectName = new Object()
+~~~
 
 #### 查找
 
+~~~javascript
 objectName.属性
 
 objectName['属性']
+~~~
 
 #### 修改
 
+~~~javascript
 objectName.属性 = newValue
+~~~
 
 #### 新增
 
+~~~javascript
 objectName.属性 = newValue
+~~~
 
 #### 删除
 
+~~~javascript
 delete objectName.属性
+~~~
 
-#### 对象
+#### 遍历对象
 
-`for (let key in object) {}`
+~~~javascript
+for (let key in object) {
+    code
+}
+~~~
 
 ### 内置对象-Math
 
@@ -297,7 +327,6 @@ delete objectName.属性
 | min    | 找最小数                    |
 | pow    | 幂运算                     |
 | abs    | 绝对值                     |
-
 
 
 

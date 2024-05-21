@@ -6,7 +6,7 @@
 </head>
 <body>
     <script>
-        // 生成0-1的随机数
+/*        // 生成0-1的随机数
         console.log(Math.random())
         // 向上取整
         console.log(Math.ceil(5.00001))
@@ -19,6 +19,34 @@
         console.log(Math.max(1, 2, 3, 4, 5))
         // 最小值
         console.log(Math.min(1, 2, 3, 4, 5))
+
+        // console.log(Math.random())
+
+        // 0~10 之间的整数
+        console.log(Math.floor(Math.random() * 11))
+
+        let arr = ['red', 'hell', 'blue', 'gos', 'rod', 'rby', 'gsi']
+
+        console.log(arr[Math.floor(Math.random() * arr.length)])*/
+    // N-M 之间的随机数
+    // Math.floor(Math.random() * (M -N + 1)) + N
+    //     console.log(Math.floor(Math.random() * (5 - 2)) + 2)
+
+        // 获取 N - M 之间的整数 但不包括 M
+        function getRandom(end, start) {
+            start = start || 0
+            end = end || 0
+            return Math.floor(Math.random() * (end - start)) + start
+        }
+
+        // console.log(getRandom(3))
+        let arr = ['miku', 'stay', true, 'and', false]
+        // console.log(arr[getRandom(arr.length)])
+        // console.log(getRandom(arr.length))
+        // console.log(getRandom(5))
+        console.log(arr)
+        console.log(arr.splice(getRandom(arr.length), 1))
+        console.log(arr)
     </script>
 </body>
 </html>

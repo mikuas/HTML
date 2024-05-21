@@ -328,7 +328,14 @@ for (let key in object) {
 | pow    | 幂运算                     |
 | abs    | 绝对值                     |
 
+#### 获取随机数
 
+~~~javascript
+// 获取 N - M 之间的整数
+function getRandom(N, M) {
+    return Math.floor(Math.randmo() * (M - N + 1)) + N
+}
+~~~
 
 
 

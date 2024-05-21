@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 1500px;
+            /*display: flex;*/
+            /*background-color: pink;*/
+            margin: 0 auto;
+        }
+
+        .box ul {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .box li {
+            display: block;
+            width: 280px;
+            height: 200px;
+            list-style: none;
+            margin-bottom: 20px;
+            background-color: dodgerblue;
+        }
+
+        .box li:hover {
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.write(`
+                    <li>${i}</li>
+                    `)
+                }
+            </script>
+        </ul>
+    </div>
+
+</body>
+</html>

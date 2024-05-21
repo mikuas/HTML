@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Element</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+    <div class="box">
+        Hello
+    </div>
+    <div>
+        DOM
+    </div>
+    <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul>
+    <script>
+        // 根据CSS选择器来获取DOM元素
+        // const box = document.querySelector('.box')
+        // console.log(box)
+
+        // 选择匹配的第一个元素
+        // const div = document.querySelector('div')
+        // console.log(div)
+
+        function ikun(element) {
+            return document.querySelector(element)
+        }
+
+        // const div = ikun('.box')
+        // console.dir(div)
+
+        // 选择匹配的多个元素
+        // 返回值 NodeList 对象集合
+        // document.querySelectorAll('div')
+
+        function ikuns(element) {
+            return document.querySelectorAll(element)
+        }
+
+        // const lis = ikuns('ul li')
+        // console.log(lis)
+
+        const LI = ikuns('.nav li')
+        // console.log(LI)
+        // console.log(typeof LI)
+        for (let i = 0; i < LI.length; i++) {
+            console.log(LI[i])
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RandomColor</title>
+    <style>
+        p {
+            /*color: rgb(57,112,49);*/
+            color: #f1b25b;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getRandom(start = 0, end) {
+            if (end === undefined) {
+                end = start
+                start = 0
+            }
+            return Math.floor(Math.random() * (end - start)) + start
+        }
+        // 传入布尔值 true返回16进制色 false返回rgb色
+        function getRandomColor(bool = true) {
+            if (bool) {
+                let color = '#'
+                let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+                // while (color.length < 7) {
+                //     let random = Math.floor(Math.random() * arr.length)
+                    // color += arr[getRandom(arr.length)]
+                // }
+                for (let i = 0; i < 6; i++) {
+                    color += arr[getRandom(arr.length)]
+                }
+                return color
+            } else {
+                arr = []
+                for (let i = 0; i < 3; i ++){
+                    // arr.push(Math.floor(Math.random() * 256))
+                    arr.push(getRandom(256))
+                }
+                return `rgb(${arr[0]},${arr[1]},${arr[2]})`
+            }
+        }
+
+        console.log(getRandomColor(true))
+        // console.log(getRandomColor())
+        console.log(getRandomColor(false))
+    </script>
+</body>
+</html>

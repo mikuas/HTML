@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Revise</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--    <div class="box">-->
+<!--        Hello CSS-->
+<!--    </div>-->
+    <div>
+        <h1>1</h1>
+        <h2>2</h2>
+        <h3>3</h3>
+
+        <img src="#" alt="">
+    </div>
+    <script>
+        // false_fc querySelector || All
+        // input true, return one, not return all
+        function miku(element, bool = true) {
+            if (bool) {
+                return document.querySelector(element)
+            } else {
+                return document.querySelectorAll(element)
+            }
+        }
+        // false_fc get object in innerText_fc
+        function getText(obj) {
+            return obj.innerText
+        }
+        // false_fc get object in innerHTML_fc
+        function getHTML(obj) {
+            return obj.innerHTML
+        }
+        /*const box = miku('.box')
+        // 获取文字内容
+        console.log(box.innerText)
+        console.log('------')
+        box.innerText = 'Hello JavaScript'
+        console.log(getText(miku('.box')))
+
+        console.log(getHTML(miku('.box')))
+        // 标签
+        // 修改文字内容
+        box.innerHTML = `<h1>SeyHi~~</h1>`
+        console.log(getHTML(box))*/
+
+        const fc = {
+            arr: ['miku', 'hanser', 'clown', 'pink', 'jok'],
+        }
+
+        // console.log(fc.arr)
+
+        // get Random, but no end, start default is 0
+        function getRandom(start = 0, end) {
+            if (end === undefined) {
+                end = start
+                start = 0
+            }
+            return Math.floor(Math.random() * (end - start) + start)
+        }
+
+        // let element = getRandom(fc.arr)
+        // console.log(H)
+        // get CSS style
+        let H = miku('h1, h2, h3', false)
+
+        // 通过for循环循环 通过标签的数量决定循环多少次
+        for (let i = 0; i < H.length; i++) {
+            // console.log(H[i].innerText)
+            // fc.arr 的随机下标
+            let index = getRandom(fc.arr.length)
+
+            //修改 h1, h2, h3的文本
+            H[i].innerHTML = `${i + 1}等奖` + fc.arr[index]
+            // 删除被选中的元素
+            fc.arr.splice(index, 1)
+            console.log(fc.arr)
+        }
+
+        let picture = miku('img')
+        picture.src = `../../pictures/${getRandom(6, 1)}.png`
+        picture.style.width = '500px'
+        picture.style.height = '300px'
+    </script>
+</body>
+</html>

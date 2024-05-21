@@ -33,10 +33,12 @@
     //     console.log(Math.floor(Math.random() * (5 - 2)) + 2)
 
         // 获取 N - M 之间的整数 但不包括 M
-        function getRandom(end, start) {
-            start = start || 0
-            end = end || 0
-            return Math.floor(Math.random() * (end - start)) + start
+        function getRandom(start = 0, end) {
+            if (end === undefined) {
+                end = start
+                start = 0
+            }
+            return Math.floor(Math.random() * (end - start) + start)
         }
 
         // console.log(getRandom(3))

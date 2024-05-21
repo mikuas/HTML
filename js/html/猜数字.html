@@ -13,10 +13,10 @@
             return Math.floor(Math.random() * (end - start)) + start
         }
 
+        // 不限制次数
         function games(end, start) {
             start = start || 0
             let N = getRandom(start, end)
-            // 不限制次数
             while (true) {
                 let num = prompt(`请输入你猜的数字(${start}-${end - 1}):`)
                 if (num === '') {
@@ -67,7 +67,6 @@
                     alert(`输入的数字小于${start},请重新输入! 你还有${number - i}次机会`)
                     continue
                 }
-
                 if (isNaN(num)) {
                     alert('蠢狗(*≧m≦*) 请输入数字!')
                     continue
@@ -77,9 +76,9 @@
                     alert('恭喜你答对了 cialloο(=•ω＜=)ρ⌒☆ !')
                     break
                 } else if (num > N) {
-                    alert(`傻逼 大了! 菜就多练! 你还有${number - i}次机会`)
+                    number - i === 0 ? alert('蠢阮, 你没有机会了!') : alert(`傻逼 大了! 菜就多练! 你还有${number - i}次机会`)
                 } else {
-                    alert(`傻逼 小了! 菜就多练! 你还有${number - i}次机会`)
+                    number - i === 0 ? alert('蠢阮, 你没有机会了!') : alert(`傻逼 小了! 菜就多练! 你还有${number - i}次机会`)
                 }
             }
         }

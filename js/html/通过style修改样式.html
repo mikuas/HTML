@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        body {
+            background: url(../../pictures/5.png) no-repeat top center/cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        function getRandom(start = 0, end) {
+            if (end === undefined) {
+                end = start
+                start = 0
+            }
+            return Math.floor(Math.random() * (end - start) + start)
+        }
+
+        function miku(element) {
+            return document.querySelector(element)
+        }
+
+        const Ciallo = {
+            styleW: function (obj, result) {
+                obj.style.width = result
+                return obj
+            },
+            styleH: function (obj, result) {
+                return obj.style.height = result
+            },
+            styleBgc: function (obj, color) {
+                // return obj.style.backgroundColor = color
+                obj.style.backgroundColor = color
+                return obj
+            }
+        }
+        // 修改样式属性
+
+        let re = miku('.box')
+        // miku('.box').style.width = '800px'
+        // Ciallo.styleW(re, '800px').styleBgc(re, 'yellow').styleH(re, '1145px')
+
+        // 更换背景图片
+        let num = getRandom(1, 11)
+        console.log(num)
+        // document.body.style.background = `url(../../pictures/${num}.png)`
+    </script>
+</body>
+</html>

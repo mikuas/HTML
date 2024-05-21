@@ -420,6 +420,18 @@ console.log(obj1.age) // 输出24
 
 
 
+#### 操纵元素样式属性
+
+~~~javascript
+// 通过style属性操作CSS
+object.style.样式属性 = 值
+
+//
+
+~~~
+
+
+
 
 
 

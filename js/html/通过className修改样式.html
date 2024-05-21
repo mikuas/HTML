@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassName</title>
+    <style>
+        div {
+            width: 100px;
+            height: 60px;
+            background-color: pink;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid pink;
+            background-color: skyblue;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .active {
+            color: red;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Hello Class
+    </div>
+    <script>
+        // 获取元素
+        const div = document.querySelector('div')
+        // 添加类名
+        div.className = 'box'
+
+        // 通过 classList.add() 追加一个类
+        div.classList.add('active')
+
+        // 删除类 classList.remove()
+        div.classList.remove('active')
+
+        // 切换类 classList.toggle()
+        div.classList.toggle('active') // 有就删掉 没有就加上
+
+
+    </script>
+</body>
+</html>

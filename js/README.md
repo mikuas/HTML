@@ -432,6 +432,25 @@ object.style.样式属性 = 值
 
 
 
+### 操作类名(className)操作CSS
+
+~~~javascript
+element.className = 'active'
+~~~
+
+### 通过classList操作类控制CSS
+
+~~~javascript
+// 追加一个类
+element.classList.add('类名')
+// 删除一个类
+element.classList.remove('类名')
+//切换一个类
+element.classList.toggle('类名') // 有就删掉 没有就加上
+~~~
+
+
+
 
 
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 320px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+        
+        .active {
+            background-color: #fff;
+        }
+
+        .text {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="../../pictures/1.png" alt="" width="400px" height="250px">
+        </div>
+        <p class="text"></p>
+        <ul>
+           <li class="active"></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </div>
+    <script>
+        function getRandom(start = 0, end) {
+            if (end === undefined) {
+                end = start
+                start = 0
+            }
+            return Math.floor(Math.random() * (end - start) + start)
+        }
+
+        const data = [
+            {url: '../../pictures/1.png', title: 'Hello'},
+            {url: '../../pictures/2.png', title: 'Java'},
+            {url: '../../pictures/3.png', title: 'SeyHi'},
+            {url: '../../pictures/4.png', title: 'Clown'},
+            {url: '../../pictures/5.png', title: 'Cool'},
+            {url: '../../pictures/6.png', title: 'Power'},
+            {url: '../../pictures/7.png', title: 'Script'}
+        ]
+        for (let i = 0; i < data.length ;i++) {
+            data[i]['color'] = `rbg(${getRandom(256)},${getRandom(256)},${getRandom(256)})`
+        }
+        console.log(data)
+
+        let text = document.querySelector('.text')
+        let img = document.querySelector('.img img')
+        let index = getRandom(data.length)
+        text.innerHTML = data[index]['title']
+        // console.log(img)
+        img.src = data[index]['url']
+
+    </script>
+</body>
+</html>

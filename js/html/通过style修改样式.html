@@ -32,20 +32,20 @@
             return document.querySelector(element)
         }
 
-        const Ciallo = {
-            styleW: function (obj, result) {
-                obj.style.width = result
-                return obj
-            },
-            styleH: function (obj, result) {
-                return obj.style.height = result
-            },
-            styleBgc: function (obj, color) {
-                // return obj.style.backgroundColor = color
-                obj.style.backgroundColor = color
-                return obj
-            }
-        }
+        // const Ciallo = {
+        //     styleW: function (obj, result) {
+        //         obj.style.width = result
+        //         return obj
+        //     },
+        //     styleH: function (obj, result) {
+        //         return obj.style.height = result
+        //     },
+        //     styleBgc: function (obj, color) {
+        //         // return obj.style.backgroundColor = color
+        //         obj.style.backgroundColor = color
+        //         return obj
+        //     }
+        // }
         // 修改样式属性
 
         let re = miku('.box')
@@ -55,7 +55,7 @@
         // 更换背景图片
         let num = getRandom(1, 11)
         console.log(num)
-        // document.body.style.background = `url(../../pictures/${num}.png)`
+        document.body.style.backgroundImage = `url(../../pictures/${num}.png)`
     </script>
 </body>
 </html>

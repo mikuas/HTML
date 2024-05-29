@@ -16,7 +16,7 @@ function timeMode(time, func, showLog=false) {
         if (showLog) {
             console.log(func)
         } else {
-            func
+            func()
         }
     }, time)
 }

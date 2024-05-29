@@ -593,11 +593,31 @@ clearInterval(变量名)
 */
 ~~~
 
+### 事件监听版本
 
+* DOM LO
+~~~javascript
+事件源.on事件(click...) = function () {
+    
+}
+~~~
 
+* DOM L2
+~~~javascript
+事件源.addEventListener(事件(click), function () {
+    
+})
+~~~
 
+> 区别: on方式会被覆盖, addEventListener方式可绑定多次,拥有事件更多特性
 
+### 事件类型
 
+| 鼠标事件            | 焦点事件       | 键盘事件           | 文本事件         |
+|-----------------|------------|----------------|--------------|
+| click 鼠标点击      | focus 获得焦点 | keydown 键盘按下触发 | input 用户输入事件 |
+| mouseenter 鼠标经过 | blur 失去焦点  | keyup 键盘抬起触发   |              |
+| mouseleave 鼠标离开 |            |                |              |
 
 
 

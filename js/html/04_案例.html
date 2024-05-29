@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../functions.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -111,18 +112,6 @@
         </div>
     </div>
     <script>
-        function getRandom(start = 0, end) {
-            if (end === undefined) {
-                end = start
-                start = 0
-            }
-            return Math.floor(Math.random() * (end - start) + start)
-        }
-
-        function miku(selector) {
-            return document.querySelector(selector)
-        }
-
         const data = [
             {url: '../../pictures/1.png', title: 'PAIMEN', color: 'rgb(100, 67, 68)'},
             {url: '../../pictures/2.png', title: 'AILIXIYA', color: 'rgb(227,189,191)'},
@@ -144,24 +133,63 @@
         const color = miku('.slider-footer')
         // const ul = miku('.slider .slider-footer ul')
         let num = 0
+        let time
         // 开启定时器
-        const time = setInterval(function () {
-            num++
-            console.log(num)
-            if (num >= data.length) {
-                num = 0
+        function startTime() {
+            time = setInterval(function () {
+                num++
+                console.log(num)
+                if (num >= data.length) {
+                    num = 0
+                }
+                // 跟换图片 文字
+                img.src = data[num].url
+                // console.log(data[num].url)
+                text.innerHTML = data[num].title
+                color.style.backgroundColor = data[num].color
+                // 先删除以前的小圆点
+                miku('.slider-indicator .active').classList.remove('active')
+                // 只让当前 li 添加 active
+                miku(`.slider-indicator li:nth-child(${num + 1})`).classList.add('active')
+                // console.log(num)
+            }, 1000)
+        }
+
+        // 开启定时器
+        startTime()
+
+        // prev 点击事件
+        addEvent(miku('.prev'), 'click', function () {
+            if (num === 0) {
+                num = data.length  + 1
             }
-            // 跟换图片 文字
+            num--
             img.src = data[num].url
-            // console.log(data[num].url)
             text.innerHTML = data[num].title
             color.style.backgroundColor = data[num].color
-            // 先删除以前的小圆点
             miku('.slider-indicator .active').classList.remove('active')
-            // 只让当前 li 添加 active
             miku(`.slider-indicator li:nth-child(${num + 1})`).classList.add('active')
-            // console.log(num)
-        }, 1000)
+        })
+
+        // next 点击事件
+        addEvent(miku('.next'), 'click', function () {
+            num++
+            img.src = data[num].url
+            text.innerHTML = data[num].title
+            color.style.backgroundColor = data[num].color
+            miku('.slider-indicator .active').classList.remove('active')
+            miku(`.slider-indicator li:nth-child(${num + 1})`).classList.add('active')
+        })
+
+        // 鼠标经过 img 事件 enter
+        addEvent(img, 'mouseenter', function () {
+            clearInterval(time)
+        })
+
+        // 鼠标离开 img 事件 leave
+        addEvent(img, 'mouseleave', function () {
+            startTime()
+        })
     </script>
 </body>
 </html>

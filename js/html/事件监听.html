@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../functions.js"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .mode {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="click">点击弹窗</button>
+    <br><br>
+    <div class="box">
+        我是广告
+    </div>
+    <br><br>
+    <button class="close">点击关闭广告</button>
+    <button class="open">点击显示广告</button>
+    <script>
+        // 点击事件
+        addEvent(miku('.click'), 'click', function () {
+            alert('Hello')
+        })
+
+        addEvent(miku('.close'), 'click', function () {
+            miku('.box').classList.add('mode')
+        })
+
+        addEvent(miku('.open'), 'click', function () {
+            miku('.box').classList.remove('mode')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button disabled>
+
+    </button>
+    <script>
+        // 开启
+        // setInterval(function, time)
+        /*setInterval(function () {
+            alert('Hello')
+        }, 2000) // 1s = 1000ms*/
+
+        function fc() {
+            console.log('Hello')
+        }
+
+        // 调用有名函数 函数名不要加小括号 如果要加小括号 必须加引号
+        /*setInterval(fc, 1)
+        setInterval("fc('setInterval')", 1)*/
+        // 返回一个 id 数字
+
+        // 获取 ID 号
+        let num = setInterval(fc, 100)
+        console.log(num)
+        // 关闭
+        clearInterval(num)
+
+        const button = document.querySelector('button')
+        let i = 5
+        // 定义秒
+        button.innerHTML = `已阅(${i})`
+        let bt = setInterval(function () { // 启动 并获取 进程 ID
+            i-- // 每过一秒就减 1
+            button.innerHTML = `已阅(${i})` // 替换 button 的文本内容
+            if (i === 0) {
+                // 判断 i 是否为 0
+                /* 如果是 >> */
+                clearInterval(bt) // 关闭定时器
+                button.disabled = false // 取消禁用 button
+                button.innerHTML = '我已同意' // 修改文本为我已同意
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

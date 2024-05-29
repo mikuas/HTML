@@ -52,39 +52,43 @@
             'Genshin Impackt Start',
             'HonKai Impackt Start',
             'Star Rail Impackt Start'
-        ];
+        ]
 
         // 获取对象
-        const text = miku('.text');
-        const start = miku('.start');
-        const end = miku('.end');
-        let id;
-        let index;
+        const text = miku('.text')
+        const start = miku('.start')
+        const end = miku('.end')
+        let id
+        let index
 
         // 添加 start 按钮 点击事件
         addEvent(start, 'click', function () {
-            start.disabled = true;
+            start.disabled = true
             id = setInterval(function () {
                 if (arr.length === 0) {
-                    text.innerHTML = '没了!!!!!';
-                    clearInterval(id);
-                    start.disabled = false;
-                    return;
+                    text.innerHTML = '没了!!!!!'
+                    clearInterval(id)
+                    start.disabled = false
+                     return
                 }
-                index = getRandom(arr.length);
-                text.innerHTML = '问题是: ' + arr[index];
-            }, 100);
-        });
+                index = getRandom(arr.length)
+                text.innerHTML = '问题是: ' + arr[index]
+            }, 100)
+        })
+
+        /*if (arr.length === 1) {
+            start.disabled = end.disabled = true
+        }*/
 
         // 添加 end 按钮 点击
         addEvent(end, 'click', function () {
-            if (arr.length > 0 && index !== undefined) {
-                console.log(arr[index]);
-                arr.splice(index, 1);
+            if (arr.length > 0) {
+                arr.splice(index, 1)
+                console.log(arr)
             }
-            clearInterval(id);
-            start.disabled = false;
-        });
+            clearInterval(id)
+            start.disabled = false
+        })
     </script>
 </body>
 </html>

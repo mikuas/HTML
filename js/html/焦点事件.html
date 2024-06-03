@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../functions.js"></script>
+    <style>
+        .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text li {
+            list-style: none;
+            width: 200px;
+            height: 20px;
+            border: 1px solid orange;
+            display: flex;
+            padding: 5px 0 5px 5px;
+        }
+
+        input {
+            width: 201px;
+            height: 30px;
+            border: 1px solid black;
+
+            /* 去除边框高亮 */
+            outline: none;
+        }
+
+        .text {
+            display: none;
+            margin: 0 0 0 -40px ;
+        }
+
+        .text a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .text li:hover {
+            background-color: rgba(169, 167, 167, 0.76);
+        }
+
+        .search {
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="text" placeholder="Hello">
+    </label>
+    <ul class="text">
+        <li>
+            <a href="https://www.baidu.com">百度</a>
+        </li>
+        <li>
+            <a href="https://www.bilibili.com">哔哩哔哩</a>
+        </li>
+        <li>
+            <a href="https://www.google.com">Google</a>
+        </li>
+        <li>
+            <a href="https://www.github.com/mikuas">Github</a>
+        </li>
+        <li>
+            <a href="#">Localhost</a>
+        </li>
+    </ul>
+
+    <script>
+        const input = miku('input')
+        // 得到焦点
+        addEvent(input, 'focus', function () {
+            input.classList.add('search')
+            miku('.text').style.display = 'flex'
+        })
+        // 失去焦点
+        addEvent(input, 'blur', function () {
+            console.log(1145)
+            input.classList.remove('search')
+            miku('.text').style.display = 'none'
+        })
+    </script>
+</body>
+</html>

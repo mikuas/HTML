@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../functions.js"></script>
+    <style>
+        input:focus {
+            width: 300px;
+            transition: all .3s;
+        }
+
+        .search {
+            width: 120px;
+            height: 80%;
+            border-style: none;
+            border-radius: 5px;
+            background-color: #00caf8;
+            margin-left: 5px;
+            transition: all 0.5s;
+        }
+
+        .ser {
+            width: 400px;
+            height: 40px;
+            transition: all 0.5s;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .ser:focus {
+            height: 55px;
+        }
+
+        .text {
+            margin: 2px 0 0 360px;
+            color: rgba(150, 150, 150, 0.88);
+            /*display: none;*/
+            /*透明度*/
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .box {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .date {
+            font-size: 15px;
+            color: rgba(134, 134, 134, 0.88);
+        }
+
+        .event {
+            display: none;
+            margin-left: 50px;
+            border-bottom: 1px solid black;
+        }
+
+        .event h3 {
+            color: #e73ab1;
+        }
+
+        .event p {
+            font-size: 18px;
+        }
+
+        .left {
+            width: 60px;
+            height: 100px;
+            float: left;
+            display: flex;
+        }
+
+        .left img {
+            transition: all 0.5s;
+            margin-top: 25%;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .right {
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label>
+<!--            <input type="text" maxlength="200" class="ser">-->
+            <textarea class="ser" maxlength="200" placeholder="发一条友善的评论"></textarea>
+        </label>
+        <button class="search">发布</button>
+    </div>
+    <p class="text">0/200字</p>
+    <div class="event">
+        <div class="left">
+            <img src="../../pictures/fufu.jpg" alt="">
+        </div>
+        <div class="right">
+            <h3>ciallο(=•ω＜=)ρ⌒☆</h3>
+            <p class="tx"></p>
+            <p class="date">1145-1-4 19:19:08</p>
+        </div>
+    </div>
+    <script>
+        // 用户输入事件
+        addEvent(miku('.ser'), 'input', function () {
+            console.log(miku('.ser').value)
+            miku('.text').innerHTML = miku('.ser').value.length + '/200字'
+        })
+
+        addEvent(miku('.ser'), 'focus', function () {
+            miku('.text').style.opacity = '1'
+            miku('.search').style.height = '100%'
+        })
+
+        addEvent(miku('.ser'), 'blur', function () {
+            miku('.text').style.opacity = '0'
+            miku('.search').style.height = '80%'
+        })
+
+        addEvent(miku('.search'), 'click', function () {
+            alert(miku('.ser').value.length)
+            miku('.event').style.display = 'block'
+            miku('.tx').innerHTML = miku('.ser').value
+        })
+
+        addEvent(miku('.ser'), 'keyup', function (e) {
+            if (e.key === 'Enter') {
+                if (miku('.ser').value.trim() !== '') {
+                    miku('.event').style.display = 'block'
+                    miku('.tx').innerHTML = miku('.ser').value
+                    miku('.left img').style.marginTop = '45%'
+                }
+                miku('.ser').value = ''
+            }
+        })
+    </script>
+</body>
+</html>

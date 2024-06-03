@@ -45,6 +45,9 @@
         </div>
     </div>
 
+    <label>
+        <textarea class="tx"></textarea>
+    </label>
     <script>
         const arr = [
             'add Group CL',
@@ -52,39 +55,17 @@
             'Genshin Impackt Start',
             'HonKai Impackt Start',
             'Star Rail Impackt Start'
-        ];
+        ]
 
-        // 获取对象
-        const text = miku('.text');
-        const start = miku('.start');
-        const end = miku('.end');
-        let id;
-        let index;
+        const but = document.querySelector('.start')
 
-        // 添加 start 按钮 点击事件
-        addEvent(start, 'click', function () {
-            start.disabled = true;
-            id = setInterval(function () {
-                if (arr.length === 0) {
-                    text.innerHTML = '没了!!!!!';
-                    clearInterval(id);
-                    start.disabled = false;
-                    return;
-                }
-                index = getRandom(arr.length);
-                text.innerHTML = '问题是: ' + arr[index];
-            }, 100);
-        });
+        addEvent(miku('.tx'), 'focus', function () {
+            console.log(miku('.tx').value)
+        })
+        addEvent(miku('.tx'), 'keyup', function (e) {
 
-        // 添加 end 按钮 点击
-        addEvent(end, 'click', function () {
-            if (arr.length > 0 && index !== undefined) {
-                console.log(arr[index]);
-                arr.splice(index, 1);
-            }
-            clearInterval(id);
-            start.disabled = false;
-        });
+        })
+        console.log('.tx')
     </script>
 </body>
 </html>

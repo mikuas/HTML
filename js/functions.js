@@ -24,3 +24,7 @@ function timeMode(time, func, showLog=false) {
 function addEvent(obj, type, func) {
     return obj.addEventListener(type, func)
 }
+
+function get() {
+
+}

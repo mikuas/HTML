@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../functions.js"></script>
+    <style>
+        .wrapper {
+            border: 1px solid black;
+            margin: 50px auto 0;
+            width: 600px;
+            height: 350px;
+            display: flex;
+        }
+
+        .wrapper .left {
+            /*background-color: aqua;*/
+            width: 40%;
+            height: 100%;
+        }
+
+        .left h1 {
+            margin: 10px 0 0 10px;
+        }
+
+        .wrapper .right {
+            /*background-color: #00ff3b;*/
+            width: 60%;
+            height: 100%;
+        }
+
+        .right ul {
+            float: right;
+            width: 80%;
+        }
+
+        .right li:last-child {
+            margin: 10px 0 20px;
+        }
+
+        .right li {
+            margin: 10px 25px 20px 0;
+            list-style: none;
+            display: inline-block;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image {
+            width: 100%;
+            height: 76%;
+            /*background-color: orange;*/
+            /*display: flex;*/
+            /*flex-wrap: wrap;*/
+        }
+
+        .right .active {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .item {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h1>每日特价</h1>
+            <img src="../../pictures/mobileAlxa.jpg" alt="" style="margin: 5px; width: 90%; height: 80%">
+        </div>
+
+        <div class="right">
+            <ul>
+                <li>
+                    <a href="https://www.baidu.com" class="active">精选</a>
+                </li>
+                <li>
+                    <a href="https://www.bilibili.com">美食</a>
+                </li>
+                <li>
+                    <a href="https://ys.mihoyo.com/">百货</a>
+                </li>
+                <li>
+                    <a href="https://www.google.com">个护</a>
+                </li>
+                <li>
+                    <a href="https://translate.google.com/">预告</a>
+                </li>
+            </ul>
+            <div class="image">
+                <img src="../../pictures/1.png" alt="" width="100%" height="100%" class="item active">
+                <img src="../../pictures/2.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/3.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/4.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/5.png" alt="" width="100%" height="100%" class="item">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let value = mikus('.right li a')
+
+        console.log(value)
+        for (let i = 0; i < value.length; i++) {
+            addEvent(value[i], 'mouseenter', function () {
+                miku('.right li .active').classList.remove('active')
+                // this 就是value[i]
+                this.classList.add('active')
+
+                // 干掉别人留下自己
+                miku('.image .active').classList.remove('active')
+                // 给自己添加 active
+                // li 的个数和 显示的区域数量是一样的 所以通过 i 来选择哪个元素添加 点那个哪个就添加
+                miku(`.image .item:nth-child(${i + 1})`).classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>

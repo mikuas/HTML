@@ -11,6 +11,10 @@ function miku(selector) {
     return document.querySelector(selector)
 }
 
+function mikus(selector) {
+    return document.querySelectorAll(selector)
+}
+
 function timeMode(time, func, showLog=false) {
     return setInterval(function () {
         if (showLog) {

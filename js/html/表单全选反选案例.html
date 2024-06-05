@@ -30,6 +30,11 @@
             padding: 2px 30px;
         }
 
+        /*选择被勾选的复选框     :checked */
+        #checked__:checked {
+
+        }
+
     </style>
 </head>
 <body>
@@ -49,7 +54,7 @@
             <tr>
                 <td>
                     <label>
-                        <input type="checkbox" class="ck">
+                        <input type="checkbox" class="phone">
                     </label>
                 </td>
                 <td>
@@ -65,7 +70,7 @@
             <tr>
                 <td>
                     <label>
-                        <input type="checkbox" class="ck">
+                        <input type="checkbox" class="water">
                     </label>
                 </td>
                 <td>
@@ -81,7 +86,7 @@
             <tr>
                 <td>
                     <label>
-                        <input type="checkbox" class="ck">
+                        <input type="checkbox" class="ds">
                     </label>
                 </td>
                 <td>
@@ -98,15 +103,74 @@
     </div>
 
     <script>
-        const arr = mikus('.ck')
+        // 方法 1
+        let value = 0
+        addEvent(miku('.phone'), 'click', function () {
+            if (this.checked) {
+            value++
+            } else {
+                value--
+            }
+
+            value === 3 ? miku('.all').checked = true : miku('.all').checked = false
+        })
+
+        addEvent(miku('.water'), 'click', function () {
+            if (this.checked) {
+                value++
+            } else {
+                value--
+            }
+
+            value === 3 ? miku('.all').checked = true : miku('.all').checked = false
+        })
+
+        addEvent(miku('.ds'), 'click', function () {
+            if (this.checked) {
+                value++
+            } else {
+                value--
+            }
+
+            value === 3 ? miku('.all').checked = true : miku('.all').checked = false
+        })
+
+        const arr = [
+            '.phone',
+            '.water',
+            '.ds'
+        ]
+
+        addEvent(miku('.all'), 'click', function () {
+            if (this.checked) {
+                value = 3
+                console.log(true)
+                for (let i = 0; i < arr.length; i++) {
+                    console.log(miku(arr[i]))
+                    miku(arr[i]).checked = this.checked
+                }
+            } else {
+                value = 0
+                console.log(false)
+                for (let i = 0; i < arr.length; i++) {
+                    console.log(miku(arr[i]))
+                    miku(arr[i]).checked = this.checked
+                }
+            }
+        })
+
+        // 方法 2
+        /*const arr = mikus('.ck')
         let value = 0
         for (let i = 0; i < arr.length; i++) {
             addEvent(arr[i], 'click', function () {
-                if (miku('.ck:checked').length === arr.length) {
-                    miku('.all').checked = true
+                if (this.checked) {
+                    value++
                 } else {
-                    miku('.all').checked = false
+                    value--
                 }
+
+                value === 3 ? miku('.all').checked = true : miku('.all').checked = false
             })
         }
 
@@ -122,7 +186,7 @@
                     arr[i].checked = this.checked
                 }
             }
-        })
+        })*/
     </script>
 </body>
 </html>

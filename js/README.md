@@ -643,8 +643,47 @@ element.addEventListener('click', function (e){
 * offsetX/offsetY    获取光标相对于当前DOM元素左上角的位置
 * key    用户按下的键盘键的值
 
+~~~javascript
+trim // 去除字符左右两边的空格
+~~~
 
+### 环境对象
+目标: 能够分析判断函数运行在不同环境中this所指代的对象
 
+环境对象:   指的是函数内部的`变量 this`, 它代表着当前函数运行时所处的环境
 
+作用: 弄清楚this的指向,可以让我们的代码更简洁
+* 函数的调用方式不同, this 指代的对象也不同
+* [随调用, this就是谁] 是判断 this 指向的粗略规则
+* 直接调用函数, 其实相当于是 window.函数, 所以 this 指代 window
+
+~~~javascript
+// 每个函数里面都有this 环境对象 普通函数里面的this指向的都是window
+function fc() {
+    console.log(this)
+}
+
+// this 指向的是函数调用者
+<button>点击</button>
+
+addEvent(miku('button'), 'click', function () {
+    console.log(this)
+    // 输出 <button>点击</button>
+    
+    miku('button').style.color = 'red'
+    // 可写为
+    this.style.color = 'red'
+})
+~~~
+
+### 回调函数
+~~~javascript
+// 当一个函数当做参数来传递给另外一个函数的时候,这个函数就是`回调函数`
+function fc() {
+    console.log('我是回调函数')
+}
+// fc传递给了setInterval, fn就是回调函数
+setInterval(fc, 1000)
+~~~
 
 

@@ -71,6 +71,8 @@ HTML 超文本标记语言(HyperText Markup Language)
 ### [表格](html/form.html)
 * 标签: table 嵌套 tr, tr嵌套td/th
 
+> 显示一条边框 border-collapse: collapse;
+
 | 标签名   | 说明    |
 |-------|-------|
 | table | 表格    |

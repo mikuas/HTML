@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -26,6 +27,7 @@
             transition: all 0.5s;
             outline: none;
             font-size: 18px;
+            align-content: center;
         }
 
         .ser:focus {
@@ -33,7 +35,7 @@
         }
 
         .text {
-            margin: 2px 0 0 360px;
+            margin: 2px 0 0 380px;
             color: rgba(150, 150, 150, 0.88);
             /*display: none;*/
             /*透明度*/
@@ -45,6 +47,7 @@
             height: 60px;
             display: flex;
             align-items: center;
+            margin-left: 30px;
         }
 
         .date {
@@ -87,10 +90,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="box">
         <label>
-<!--            <input type="text" maxlength="200" class="ser">-->
+            <!--            <input type="text" maxlength="200" class="ser">-->
             <textarea class="ser" maxlength="200" placeholder="发一条友善的评论"></textarea>
         </label>
         <button class="search">发布</button>
@@ -101,7 +105,7 @@
             <img src="../../pictures/fufu.jpg" alt="">
         </div>
         <div class="right">
-            <h3>ciallο(=•ω＜=)ρ⌒☆</h3>
+            <h3>Ciallo～(∠・ω< )⌒☆</h3>
             <p class="tx"></p>
             <p class="date">1145-1-4 19:19:08</p>
         </div>
@@ -110,7 +114,8 @@
         // 用户输入事件
         addEvent(miku('.ser'), 'input', function () {
             console.log(miku('.ser').value)
-            miku('.text').innerHTML = miku('.ser').value.length + '/200字'
+            // 用户输入为空 不算字符 通过 trim()方法 去除空格
+            miku('.text').innerHTML = miku('.ser').value.trim().length + '/200字'
         })
 
         addEvent(miku('.ser'), 'focus', function () {
@@ -131,14 +136,20 @@
 
         addEvent(miku('.ser'), 'keyup', function (e) {
             if (e.key === 'Enter') {
+                // 判断.ser 的 内容是否为空
+                //trim 去除空格
                 if (miku('.ser').value.trim() !== '') {
-                    miku('.event').style.display = 'block'
+                    // 可写为 if (miku('.ser').value.trim()
+                     miku('.event').style.display = 'block'
                     miku('.tx').innerHTML = miku('.ser').value
                     miku('.left img').style.marginTop = '45%'
                 }
                 miku('.ser').value = ''
+                // 按下回车后复原
+                miku('.text').innerHTML = '0/200字'
             }
         })
     </script>
 </body>
+
 </html>

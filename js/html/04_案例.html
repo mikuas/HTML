@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -86,10 +87,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="slider">
         <div class="slider-wrapper">
-<!--            <img src="../../pictures/1.png" alt="">-->
+            <!--            <img src="../../pictures/1.png" alt="">-->
             <a href="https://www.baidu.com">
                 <img src="../../pictures/1.png" alt="">
             </a>
@@ -138,26 +140,27 @@
                 if (num >= data.length) {
                     num = 0
                 }
-                // ******* // #########>>>>>>       cialloο(=•ω＜=)ρ⌒☆
+                // ******* // #########>>>>>>       Ciallo～(∠・ω< )⌒☆
                 addClass()
             }, 1000)
         }
 
         const data = [
-            {url: '../../pictures/1.png', title: 'PAIMEN', color: 'rgb(100, 67, 68)', hurl: "https://ys.mihoyo.com/"},
-            {url: '../../pictures/2.png', title: 'AILIXIYA', color: 'rgb(227,189,191)', hurl: "https://www.bh3.com/"},
-            {url: '../../pictures/3.png', title: 'KEQING', color: '', hurl: "https://ys.mihoyo.com/main/"},
-            {url: '../../pictures/4.png', title: 'BABALAANDNUOAIER', color: '', hurl: "https://www.baidu.com"},
-            {url: '../../pictures/5.png', title: 'HONKAI', color: '', hurl: "https://bh3.mihoyo.com/main"},
-            {url: '../../pictures/6.png', title: 'KELAI', color: '', hurl: "https://bh3.mihoyo.com/main"},
-            {url: '../../pictures/7.png', title: 'QIQI', color: '', hurl: "https://www.bilibili.com"},
-            {url: '../../pictures/8.png', title: 'AILIXIYA', color: '', hurl: "https://bh3.mihoyo.com/main"},
-            {url: '../../pictures/9.png', title: 'HUTAO', color: '', hurl: "https://www.bh3.com/"},
-            {url: '../../pictures/10.png', title: 'JIKEIKUN', color: '', hurl: "https://bh3.mihoyo.com/main"}
+            { url: '../../pictures/1.png', title: 'PAIMEN', color: 'rgb(100, 67, 68)', hurl: "https://ys.mihoyo.com/" },
+            { url: '../../pictures/2.png', title: 'AILIXIYA', color: 'rgb(227,189,191)', hurl: "https://www.bh3.com/" },
+            { url: '../../pictures/3.png', title: 'KEQING', color: '', hurl: "https://ys.mihoyo.com/main/" },
+            { url: '../../pictures/4.png', title: 'BABALAANDNUOAIER', color: '', hurl: "https://www.baidu.com" },
+            { url: '../../pictures/5.png', title: 'HONKAI', color: '', hurl: "https://bh3.mihoyo.com/main" },
+            { url: '../../pictures/6.png', title: 'KELAI', color: '', hurl: "https://bh3.mihoyo.com/main" },
+            { url: '../../pictures/7.png', title: 'QIQI', color: '', hurl: "https://www.bilibili.com" },
+            { url: '../../pictures/8.png', title: 'AILIXIYA', color: '', hurl: "https://bh3.mihoyo.com/main" },
+            { url: '../../pictures/9.png', title: 'HUTAO', color: '', hurl: "https://www.bh3.com/" },
+            { url: '../../pictures/10.png', title: 'JIKEIKUN', color: '', hurl: "https://bh3.mihoyo.com/main" }
         ]
-        // for (let i = 0; i < data.length ;i++) {
-        //     data[i]['color'] = `rgb(${getRandom(256)},${getRandom(256)},${getRandom(256)})`
-        // }
+
+        for (let i = 0; i < data.length; i++) {
+            data[i]['color'] = `rgb(${getRandom(256)},${getRandom(256)},${getRandom(256)})`
+        }
 
         const img = miku('.slider-wrapper img')
         const text = miku('.slider-footer p')
@@ -181,7 +184,7 @@
                 num = data.length
             }
             num--
-            // ******* // #########>>>>>>       cialloο(=•ω＜=)ρ⌒☆
+            // ******* // #########>>>>>>       Ciallo～(∠・ω< )⌒☆
             addClass()
         })
 
@@ -191,7 +194,7 @@
                 num = -1
             }
             num++
-            // ******* // #########>>>>>>       cialloο(=•ω＜=)ρ⌒☆
+            // ******* // #########>>>>>>       Ciallo～(∠・ω< )⌒☆
             addClass()
         })
 
@@ -207,4 +210,5 @@
 
     </script>
 </body>
+
 </html>

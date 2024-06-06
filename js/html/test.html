@@ -1,128 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <script src="../functions.js"></script>
     <style>
-        .wrapper{
-            margin: 50px auto 0;
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
         }
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
+        .son {
+            width: 250px;
+            height: 250px;
+            background-color: deeppink;
         }
-
-        table th {
-            border: none;
-            background-color: #00a4ff;
-            color: white;
-        }
-
-        table td {
-            font-size: 18px;
-            padding: 3px 30px;
-        }
-
-        table th {
-            font-size: 20px;
-            padding: 2px 30px;
-        }
-
     </style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <table border="1">
-            <tr>
-                <th>
-                    <label>
-                        <input type="checkbox" class="all">
-                    </label>
-                    全选
-                </th>
-                <th>商品</th>
-                <th>商家</th>
-                <th>价格</th>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        <input type="checkbox" class="ck">
-                    </label>
-                </td>
-                <td>
-                    小米手机
-                </td>
-                <td>
-                    小米
-                </td>
-                <td>
-                    ￥ 1999
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        <input type="checkbox" class="ck">
-                    </label>
-                </td>
-                <td>
-                    小米净水器
-                </td>
-                <td>
-                    小米
-                </td>
-                <td>
-                    ￥ 4999
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        <input type="checkbox" class="ck">
-                    </label>
-                </td>
-                <td>
-                    小米电视
-                </td>
-                <td>
-                    小米
-                </td>
-                <td>
-                    ￥ 5999
-                </td>
-            </tr>
-        </table>
+
+    <div class="father">
+        <div class="son">
+
+        </div>
     </div>
-
     <script>
-        const arr = mikus('.ck')
-        let value = 0
-        for (let i = 0; i < arr.length; i++) {
-            addEvent(arr[i], 'click', function () {
-                if (miku('.ck:checked').length === arr.length) {
-                    miku('.all').checked = true
-                } else {
-                    miku('.all').checked = false
-                }
-            })
-        }
+        function addEvents(objArr = [], type = [], functions = [], bool = false) {
 
-        addEvent(miku('.all'), 'click', function () {
-            if (this.checked) {
-                value = 3
-                for (let i = 0; i < arr.length; i++) {
-                    arr[i].checked = this.checked
+            if (type.length === 1) {
+                for (let i = 0; i < objArr.length; i++) {
+                    objArr[i].addEventListener(type[0], functions[i], bool)
+                }
+            } else if (functions.length === 1) {
+                for (let i = 0; i < objArr.length; i++) {
+                    objArr[i].addEventListener(type[0], functions[0], bool)
                 }
             } else {
-                value = 0
-                for (let i = 0; i < arr.length; i++) {
-                    arr[i].checked = this.checked
+                for (let i = 0; i < objArr.length; i++) {
+                    objArr[i].addEventListener(type[i], functions[i], bool)
                 }
             }
-        })
+        }
+
+        addEvents([miku('.father'), miku('.son')], ['click'], [function () {
+            alert('1145')
+        }])
+
+        const arr = [
+            function () {
+                alert('Hello')
+            },
+            function () {
+                alert('World')
+            }
+        ]
     </script>
 </body>
+
 </html>

@@ -15,20 +15,37 @@ function mikus(selector) {
     return document.querySelectorAll(selector)
 }
 
-function timeMode(time, func, showLog=false) {
+function timeMode(time, functions, showLog=false) {
     return setInterval(function () {
         if (showLog) {
-            console.log(func)
+            console.log(functions)
         } else {
-            func()
+            functions()
         }
     }, time)
 }
 
-function addEvent(obj, type, func) {
-    return obj.addEventListener(type, func)
+function addEvent(obj, type, functions, bool = false) {
+    return obj.addEventListener(type, functions, bool)
 }
 
-function get() {
+function addEvents(objArr = [], type = [], functions = [], bool = false) {
 
+    if (type.length === 1) {
+        for (let i = 0; i < objArr.length; i++) {
+            objArr[i].addEventListener(type[0], functions[i], bool)
+        }
+    } else if (functions.length === 1) {
+        for (let i = 0; i < objArr.length; i++) {
+            objArr[i].addEventListener(type[0], functions[0], bool)
+        }
+    } else {
+        for (let i = 0; i < objArr.length; i++) {
+            objArr[i].addEventListener(type[i], functions[i], bool)
+        }
+    }
+}
+
+function stopBubble(element) {
+    return element.stopPropagation()
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../functions.js"></script>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+
+    <script>
+        let arr = [
+            function () {
+            }
+        ]
+
+        addEvents([miku('.father'), miku('.son')], ['click', 'click'], [
+            function (e) {
+                stopBubble(e)
+                alert('iAm Father')
+            },
+            function (e) {
+                stopBubble(e)
+                alert('iAm Son')
+            }]
+        )
+    </script>
+
+</body>
+</html>

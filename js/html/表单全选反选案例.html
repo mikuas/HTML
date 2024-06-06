@@ -159,18 +159,15 @@
             }
         })
 
+
         // 方法 2
         /*const arr = mikus('.ck')
         let value = 0
         for (let i = 0; i < arr.length; i++) {
             addEvent(arr[i], 'click', function () {
-                if (this.checked) {
-                    value++
-                } else {
-                    value--
-                }
 
-                value === 3 ? miku('.all').checked = true : miku('.all').checked = false
+                miku('.all').checked = mikus('.ck:checked').length === arr.length;
+                // miku('.ck:checked').length === arr.length ? miku('.all').checked = true : miku('.all').checked = false
             })
         }
 

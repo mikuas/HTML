@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../functions.js"></script>
+    <style>
+        .wrapper {
+            border: 1px solid black;
+            margin: 50px auto 0;
+            width: 600px;
+            height: 350px;
+            display: flex;
+        }
+
+        .wrapper .left {
+            /*background-color: aqua;*/
+            width: 40%;
+            height: 100%;
+        }
+
+        .left h1 {
+            margin: 10px 0 0 10px;
+        }
+
+        .wrapper .right {
+            /*background-color: #00ff3b;*/
+            width: 60%;
+            height: 100%;
+        }
+
+        .right ul {
+            float: right;
+            width: 80%;
+        }
+
+        .right li:last-child {
+            margin: 10px 0 20px;
+        }
+
+        .right li {
+            margin: 10px 25px 20px 0;
+            list-style: none;
+            display: inline-block;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image {
+            width: 100%;
+            height: 76%;
+            /*background-color: orange;*/
+            /*display: flex;*/
+            /*flex-wrap: wrap;*/
+        }
+
+        .right .active {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .item {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <h1>每日特价</h1>
+            <img src="../../pictures/mobileAlxa.jpg" alt="" style="margin: 5px; width: 90%; height: 80%">
+        </div>
+
+        <div class="right">
+            <ul class="father">
+                <li>
+                    <a href="#" class="active" data-id="0">精选</a>
+                </li>
+                <li>
+                    <a href="#" data-id="1">美食</a>
+                </li>
+                <li>
+                    <a href="#" data-id="2">百货</a>
+                </li>
+                <li>
+                    <a href="#" data-id="3">个护</a>
+                </li>
+                <li>
+                    <a href="#" data-id="4">预告</a>
+                </li>
+            </ul>
+            <div class="image">
+                <img src="../../pictures/1.png" alt="" width="100%" height="100%" class="item active">
+                <img src="../../pictures/2.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/3.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/4.png" alt="" width="100%" height="100%" class="item">
+                <img src="../../pictures/5.png" alt="" width="100%" height="100%" class="item">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = mikus('.item')
+
+        addEvent(miku('.father'), 'mouseover', function (e) { // mouseover
+            if (e.target.tagName === 'A') {
+                miku('.father .active').classList.remove('active')
+                // this 指向ul
+                // 当前元素 e.target
+                e.target.classList.add('active')
+
+                miku('.image .active').classList.remove('active')
+                // 自定义属性通过 dataset.id 获取 ID 获取的是字符串
+                miku(`.image .item:nth-child(${+e.target.dataset.id + 1})`).classList.add('active')
+                // 2.
+                // items[+e.target.dataset.id].classList.add('active')
+            }
+        })
+    </script>
+</body>
+</html>

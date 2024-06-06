@@ -613,11 +613,11 @@ clearInterval(变量名)
 
 ### 事件类型
 
-| 鼠标事件            | 焦点事件       | 键盘事件           | 文本事件         |
-|-----------------|------------|----------------|--------------|
-| click 鼠标点击      | focus 获得焦点 | keydown 键盘按下触发 | input 用户输入事件 |
-| mouseenter 鼠标经过 | blur 失去焦点  | keyup 键盘抬起触发   |              |
-| mouseleave 鼠标离开 |            |                |              |
+| 鼠标事件                                        | 焦点事件       | 键盘事件           | 文本事件         |
+|---------------------------------------------|------------|----------------|--------------|
+| click 鼠标点击                                  | focus 获得焦点 | keydown 键盘按下触发 | input 用户输入事件 |
+| mouseenter(无冒泡) 鼠标经过 \| mouseover(有冒泡) 鼠标经过 | blur 失去焦点  | keyup 键盘抬起触发   |              |
+| mouseleave(无冒泡) 鼠标离开 \| mouseout(有冒泡) 鼠标离开  |            |                |
 
 ### 事件对象
 获取事件对象
@@ -685,5 +685,135 @@ function fc() {
 // fc传递给了setInterval, fn就是回调函数
 setInterval(fc, 1000)
 ~~~
+
+### 事件流
+* 事件流指的是事件完整执行过程中的流动路径
+
+~~~javascript
+// click div
+
+捕    1.     Document        7.     冒
+获    2.     Element html    6.     泡
+阶    3.     Element body    5.     阶
+段           Element div     4.     段
+
+// 假设页面里面有个 div 当触发事件时 会经历两个阶段 分别是捕获阶段 冒泡阶段
+// 捕获阶段是 从父到子      冒泡阶段(为主)是 从子到父
+~~~
+
+### 事件捕获
+~~~javascript
+DOM.addEventListener(事件类型, function, 是否使用捕获机制)
+~~~
+
+### 冒泡事件
+~~~javascript
+// 当一个元素的事件被触发时,同样的事件将会在该元素的所有祖先元素中依次触发 这一过程被称为事件冒泡
+// 当一个元素触发事件后 会依次想上调用所有父级元素的 `同名事件`
+~~~
+
+### 阻止冒泡
+~~~javascript
+事件对象.stopPropagation()
+// 此方法可以阻断事件流动传播, 不光在冒泡阶段有效, 捕获阶段也有效
+
+/*
+阻止默认行为
+e.preventDefault() 
+*/
+
+<form action='http://www.baidu.com'>
+    <input type='submit' value='免费注册'> 
+</form>
+
+const form = document.querySelector('form')
+form.addEventListener('submit', function (e) {
+    // 阻止默认行为 提交
+    e.preventDefault()
+})
+
+~~~
+
+### 解绑事件
+~~~javascript
+/*
+on 事件方式 
+*/
+// 绑定事件
+obj.onclick = function () {
+    alert()
+}
+// 解绑事件
+obj.onclick = null
+
+/*
+addEventListener方式 必须使用:
+removeEventListener(事件类型, function, [捕获, 冒泡]
+*/
+
+function fc() {
+    alert(1)
+}
+
+// 绑定事件
+obj.addEventListener('click', fc)
+
+// 解绑事件
+obj.removeEventListener('click', fc)
+
+/*      匿名函数无法解绑        */
+~~~
+
+### 事件委托
+~~~javascript
+// 优点:  减少注册次数，可以提高程序性能
+// 原理:  事件委托其实是利用事件冒泡的特点
+/*
+给`父元素注册事件,当我们触发子元素的时候,会冒泡到父元素身上,从而触发父元素的事件`
+*/
+ul.addEventListener('click', function () {}) // 执行父级点击事件
+//实现:   事件对象.target.tagName 可以获得真正触发事件的元素
+~~~
+
+### 页面加载事件
+~~~javascript
+/*
+load
+*/
+// 等待页面所有元素加载完毕 就回去执行回调函数
+window.addEventListener('load', function () {
+    Code
+})
+
+img.addEventListener('load', function () {
+    // 等待图片加载完毕执行
+})
+
+/*  不光可以监听整个页面资源加载完毕,也可以针对某个资源绑定load事件  */
+
+// 当初始的HTML文档被完全加载和解析完成之后, DOMContentLoaded 事件被触发 而无需等待样式表,图像等完全加载
+/*
+DOMContentLoaded 
+*/
+// 监听页面DOM元素加载完毕 给document添加
+document.addEventListener('DOMContentLoaded', function () {
+   Code 
+})
+~~~
+
+### 页面滚动事件
+~~~javascript
+/*
+scroll 
+*/
+// 监听整个页面滚动
+window.addEventListener('scroll', function () {
+    Code
+})
+~~~
+
+
+
+
 
 

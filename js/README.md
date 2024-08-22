@@ -812,6 +812,23 @@ window.addEventListener('scroll', function () {
 })
 ~~~
 
+### 页面滚动事件-获取位置
+~~~javascript
+scroollLeft
+scroollTop
+// 获取被卷去的大小
+// 获取元素内容往左，往上滚出去看不到的距离
+// 可`读写`
+
+div.addEventListener('scroll', function () {
+    console.log(div.scrollTop, div.scrollLeft)
+})
+~~~
+
+
+
+
+
 
 
 

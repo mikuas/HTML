@@ -1,64 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../functions.js"></script>
-    <style>
-        .father {
-            width: 500px;
-            height: 500px;
-            background-color: pink;
-        }
-
-        .son {
-            width: 250px;
-            height: 250px;
-            background-color: deeppink;
-        }
-    </style>
 </head>
 
 <body>
-
-    <div class="father">
-        <div class="son">
-
-        </div>
-    </div>
     <script>
-        function addEvents(objArr = [], type = [], functions = [], bool = false) {
+        let num = 0
+        // const ID = timeModes([1000], [
+        //     function () {
+        //         console.log('Hello')
+        //     },
+        //     function () {
+        //         console.log('World')
+        //     }
+        // ])
 
-            if (type.length === 1) {
-                for (let i = 0; i < objArr.length; i++) {
-                    objArr[i].addEventListener(type[0], functions[i], bool)
-                }
-            } else if (functions.length === 1) {
-                for (let i = 0; i < objArr.length; i++) {
-                    objArr[i].addEventListener(type[0], functions[0], bool)
-                }
-            } else {
-                for (let i = 0; i < objArr.length; i++) {
-                    objArr[i].addEventListener(type[i], functions[i], bool)
-                }
-            }
-        }
+        const arr = timeMode(1000, function () {
+            console.log('Hello');
+        })
 
-        addEvents([miku('.father'), miku('.son')], ['click'], [function () {
-            alert('1145')
-        }])
 
-        const arr = [
-            function () {
-                alert('Hello')
-            },
-            function () {
-                alert('World')
-            }
-        ]
+        timeMode(5000, function () {
+            timeClears(arr)
+        })
     </script>
 </body>
 

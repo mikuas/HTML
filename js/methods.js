@@ -77,8 +77,3 @@ function addEvents(objArr = [], type, functions, bool = false) {
     }
 }
 
-function stopBubble(element) {
-    return element.stopPropagation()
-}
-
-

@@ -427,3 +427,7 @@ a {
     margin: 0 auto;
     width: 1200px;
 }
+
+#bottom .right a:hover {
+    color: #0effc0;
+}

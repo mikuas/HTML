@@ -16,6 +16,14 @@ JavaScritp的组成
 
 ---
 
+导入js<script src=''></script>
+
+导入module
+
+import { fc, fc } from 'fileName';
+
+const { fc, fc } = require('fileName');
+
 ### 变量(let)
 
 大小写敏感
@@ -824,13 +832,6 @@ div.addEventListener('scroll', function () {
     console.log(div.scrollTop, div.scrollLeft)
 })
 ~~~
-
-
-
-
-
-
-
 
 
 

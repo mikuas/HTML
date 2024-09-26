@@ -1,0 +1,9 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.cursorStyle": "line",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "expand",
+    "editor.formatOnSave": true,
+    "window.autoDetectColorScheme": false,
+    "terminal.integrated.cursorBlinking": true
+}

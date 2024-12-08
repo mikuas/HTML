@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .nav ul {
+            background-color: pink;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav ul li {
+            margin-right: 50px;
+            display: inline-block;
+        }
+
+        .bottom {
+            position: relative;
+        }
+
+        .bottom img {
+            width: 100%;
+            height: 200px;
+            position: absolute;
+        }
+
+        .bottom ul {
+            background-color: rgba(113, 133, 177, 0.6);
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            text-align: center;
+            position: absolute;
+            list-style: none;
+            opacity: 0;
+            transition: all 1s;
+        }
+        
+        .bottom:hover ul {
+            height: 70px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li>NAV</li>
+                <li>NAV</li>
+                <li>NAV</li>
+                <li>NAV</li>
+                <li>NAV</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <img src="../../pictures/1.png" alt="">
+            <ul>
+                <li>This is Nav</li>
+                <li>This is Nav</li>
+                <li>This is Nav</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            background-image: linear-gradient(
+                45deg,
+                /* blue 60%, */
+                rgb(229, 109, 245),
+                rgba(137, 241, 177, 0.2)
+                );
+        }
+
+        .box {
+            width: 350px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box img {
+            width: 350px;
+            height: 200px;
+        }
+
+        .box .title {
+            position: absolute;
+            left: 15px;
+            bottom: 10px;
+            z-index: 2;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .box .mask {
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: linear-gradient(transparent,
+                    rgba(0, 0, 0, 0.5));
+
+            opacity: 0;
+
+            transition: all 1s;
+        }
+
+        .box:hover .mask {
+            opacity: 1;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            background-color: pink;
+            border: 0;
+
+            background-image: radial-gradient(30px at center center,
+                    aqua,
+                    pink);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../../pictures/1.png" alt="">
+        <div class="title">Hello CSS</div>
+        <div class="mask"></div>
+    </div>
+
+    <button>Button</button>
+</body>
+
+</html>

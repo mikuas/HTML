@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            /* 视距效果必须添加给直接父级 */
+            perspective: 1000px;    
+        }
+        
+        .son {
+            margin: 100px auto;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            transition: all 1s;
+        }
+
+        .son:hover {
+            transform: translate3d(100px, 100px, 300px);
+            transform: translateZ(300px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

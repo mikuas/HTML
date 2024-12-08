@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            overflow: hidden;
+            margin: 100px auto;
+            width: 600px;
+            height: 120px;
+            border: 1px solid pink;
+        }
+
+        .box ul {
+            display: flex;
+            list-style: none;
+            animation: move 6s infinite linear;
+        }
+
+        .box img {
+            width: 200px;
+            height: 120px;
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translate(-1000px);
+            }
+        }
+
+        .box:hover ul {
+            animation-play-state: paused;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="../../pictures/1.png" alt=""></li>
+            <li><img src="../../pictures/2.png" alt=""></li>
+            <li><img src="../../pictures/3.png" alt=""></li>
+            <li><img src="../../pictures/4.png" alt=""></li>
+            <li><img src="../../pictures/5.png" alt=""></li>
+            <!-- 替身 -->
+            <li><img src="../../pictures/1.png" alt=""></li>
+            <li><img src="../../pictures/2.png" alt=""></li>
+            <li><img src="../../pictures/3.png" alt=""></li>
+            
+        </ul>
+    </div>
+</body>
+</html>

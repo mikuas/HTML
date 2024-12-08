@@ -61,6 +61,7 @@ HTML 超文本标记语言(HyperText Markup Language)
 #### 无序列表(ul)
 * 作用: 布局排列整齐的不需要规定顺序的区域
 * 标签 ul 嵌套 li, ul是无无序列表 li是列表条目
+* 横向布局 display: inline-block;
 #### 有序列表(ol)
 * 作用: 布局排列整齐的需要规定顺序的区域
 * 标签 ol 嵌套 li, ol是无无序列表 li是列表条目
@@ -552,73 +553,223 @@ Flex-组成
 1. 定位模式: position
 2. 边偏移: 设置盒子的位置
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+```css
+/* 相对定位 */
+position: relative
+/* 绝对定位 */
+position: absolute
+使用场景: 子级绝对定位,父级相对定位(子绝父相)
+/* 固定定位 */
+position: fixed
+使用场景: 元素位置在网页滚动时不会改变
+/* 堆叠层级 */
+z-index
+默认效果: 按照标签书写顺序,后来者居上
+作用: 设置定位元素的层级顺序,改变定位元素的显示顺序
+```
+
+### 垂直对齐方式
+```css
+vertical-align
+baseline    基线对齐(默认)
+top         顶部对齐
+middle      居中对齐
+bottom      底部对齐
+```
+
+### 过渡
+```css
+transition
+```
+* 作用: 可以为`一个元素`在`不同状态`之间切换的时候添加`过渡效果`
+* 属性名: transition (复合属性)
+* 属性值: 过渡的属性 花费时间(s)
+
+### 透明度
+```css
+opacity
+/* 作用: 设置整个元素的透明度(包括背景和内容) 0-1 */
+```
+
+### 光标类型
+```css
+cursor
+作用: 鼠标悬停在元素上时指针显示样式
+```
+| 属性值     | 效果             |
+|---------|----------------|
+| default | 默认值,通常是箭头      |
+| pointer | 小手工具,提示用户可以点击  |
+| text    | 工字形,提示用户可以选择文字 |
+| move    | 十字光标,提示用户可以移动  |
+
+---
+
+### 平面转换
+> 为元素`添加动态效果`, 一般与`过渡`配合使用(改变盒子在`平面`内的`形态`(位移, 旋转, 缩放, 倾斜))
+
+#### [平移](./html/平面转换/平移.html)
+```css
+transform: translate(X, Y);
+transform: translateX(X);
+transform: translateY(Y);
+```
+
+#### [旋转](./html/平面转换/旋转.html)
+```css
+transform: rotate(`deg`)
+```
+* 改变转换原点
+> 默认情况下,转换原点是盒子中心点
+```css
+transform-origin: 水平原点位置 垂直原点位子;
+```
+
+#### [多重转换](./html/平面转换/多重转换.html)
+先平移 再旋转
+```css
+transform: translate() rotate();
+```
+
+#### [缩放](./html/平面转换/缩放.html)
+```css
+transform: scale(缩放倍数);
+transform: scale(X轴缩放倍数, Y轴缩放倍数)
+/* 取值大于1表示放大, 小于1表示缩小 */
+```
+
+#### [倾斜](./html/平面转换/倾斜.html)
+```css
+transform: skew();
+```
+
+#### [渐变](./html/平面转换/渐变.html)
+/* 线性渐变 */
+```css
+background-image: linear-gradient (
+    渐变方向,
+    颜色1 [终点位置],
+    颜色2 [终点位置],
+    ...
+)
+```
+* 取值
+* 渐变方向: 可选
+  * 方位名词
+  * 角度度数
+* 终点位置: 可选 
+  * 百分比
+```css
+/* 径向渐变 */
+backgroud-image: radial-gradient (
+    半径 at 圆心位置,
+    颜色1 [终点位置],
+    颜色2 [终点位置],
+    ...
+)
+```
+* 取值
+  * 半径可以为`两条`, 则为`椭圆` 
+  * 圆心位置取值: 像素单位数值 /百分比/ 方位名词
+
+### 空间转换
+* 空间: 是从坐标轴角度定义的`X Y Z`三条坐标构成了一个立体空间, `Z轴位置与视线方向相同`
+* 空间转换也叫3D转换
+```css
+/* 属性 */
+transform: translate3d(x, y, z);
+transform: translateX();
+transform: translateY();
+transform: translateZ();
+```
+#### 视距
+> perspective
+* 作用: 指定了`观察者`与`z=0`平面的`距离`, 为元素添加`透视效果`
+* 透视效果: 近大远小
+* 属性: (添加给`父类`, 取值范围800-1200)
+```css
+perspective 视距;
+```
+
+#### 旋转
+```css
+transform: rotateZ(); 
+
+/*  */
+transform: rotate3d(x, y, z, 角度): 用来设置自定义旋转轴的位置及旋转的角度
+x, y, z取值为0-1之间的数字
+```
+#### 立体呈现
+```css
+/* 作用: 设置`子`元素是位于`3D空间`还是`平面`中 */
+transform-style
+flat: 子级处于平面中
+preserve-3d: 子级处于3D空间
+```
+
+#### 缩放
+```css
+transform: scale3d(x, y, z)
+```
+
+### 动画
+* 过渡: 实现`两个状态`间的变换过程
+* 动画: 实现`多个状态`间的变化过程, `动画可控过程`(重复播放, 最终动画, 是否暂停)
+```css
+animation
+/* 定义动画 */
+@keyframes 'name' {
+  from {}
+  to S{}
+}
+@keyframes 'name' {
+  0% {}
+  10% {}
+  ...
+  100% {}
+}
+/* 使用动画 */
+animation: 'name' time 速度曲线 延迟时间 重复次数 动画方向 执行完毕时状态;
+/* 
+  动画名称和动画时常必须赋值
+  取值部分先后顺序
+  如果有两个时间值,第一个时间表示动画时常,第二个时间表示延迟时间
+*/
+/* 重复次数 无限循环 */
+animation: infinite;
+/* 反向 */
+animation: alternate;
+/* 执行完毕状态 结束状态*/
+animation: forwards;
+/* 暂停动画 */
+animation-play-state: paused
+```
+* 速度曲线
+
+| 参数                            | 效果                                          |
+|-------------------------------|---------------------------------------------|
+| linear                        | 匀速                                          |
+| ease                          | 动画从慢到快，再慢回到结束的效果（默认值                        |
+| ease-in                       | 动画开始时速度较慢，然后逐渐加速                            |
+| ease-out                      | 动画开始时速度较快，最后减速                              |
+| ease-in-out                   | 动画开始和结束时都慢，中间加速                             |
+| steps(int)                    | 动画在每个时间点突然变化，跳跃地进行（而不是平滑过渡）。它会将动画分为 int 个步骤 |
+| cubic-bezier(x1, y1, x2, y2); | 自定义贝塞尔曲线，通过四个值来控制动画的加速度和减速                  | 
+
+#### 逐帧动画
+```css
+animation-timing-function: steps(int);
+```
+
+#### 多组动画
+```css
+animation:
+  动画1,
+  动画2,
+  ...
+;
+animation:
+  run 1s,
+  move 2.5s linear infinite
+;
+```

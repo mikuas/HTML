@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 300px;
+            border: 1px solid black;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+
+        .box ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .box li {
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            transform-style: preserve-3d;
+            position: relative;
+
+            transition: all 0.5s;
+            /* transform: scaleX(0.5); */
+            /* transform: scale3d(2, 3 , 4); */
+        }
+
+        .box li a:first-child {
+            position: absolute;
+            background-color: green;
+            transform: translateZ(20px);
+        }
+
+        .box li a:last-child {
+            position: absolute;
+            background-color: orange;
+            transform: rotateX(90deg) translateZ(20px);
+        }
+        
+        .box li:hover {
+            transform: rotateX(-90deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href="">主页</a>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">登录</a>
+                <a href="">Login</a>
+            </li>
+            <li>
+                <a href="">注册</a>
+                <a href="">Register</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

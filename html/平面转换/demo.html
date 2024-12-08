@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            display: flex;
+            width: 1200px;
+            height: 550px;
+            background-image: url(../../pictures/1.png);
+            background-size: cover;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .father .box_one,
+        .father .box_two {
+            width: 50%;
+            height: 100%;
+            background-image: url(../../pictures/10.png);
+            background-size: cover;
+            transition: all 1s;
+        }
+
+        .father:hover .box_one {
+            transform: translate(-100%);
+        }
+
+        .father:hover .box_two {
+            transform: translate(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="box_one"></div>
+        <div class="box_two"></div>
+    </div>
+</body>
+
+</html>

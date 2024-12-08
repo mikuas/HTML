@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 60%;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            /* 
+                1. 改变位置的参照物是 自己原来的位置
+                2. 不脱标 占位
+                3. 标签显示模式特点 不变
+            */
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .box p {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            /* 
+                1. 脱标 不占位
+                2. 参照物: 先找最近的已经定位的祖先元素
+                如果祖先元素都没有定位,参照浏览器可视区域位置
+                3. 显示模式特点改变
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../pictures/1.png" alt="">
+        <p>
+            Hello World
+        </p>
+    </div>
+</body>
+</html>

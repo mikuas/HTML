@@ -1,0 +1,22 @@
+@myColor: pink;
+@myFontSize: 24px;
+
+.box {
+    color: @myColor;
+
+    .box_one {
+        color: red;
+
+        .box_two {
+            color: aqua;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: skyblue;
+            }
+        }
+    }
+}

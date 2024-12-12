@@ -773,3 +773,55 @@ animation:
   move 2.5s linear infinite
 ;
 ```
+
+### rem
+* rem单位, 是`相对单位`
+* rem单位是相对于`HTML标签的字号`计算结果
+* 1rem = 1HTML字号大小
+> 目前rem布局方案中, 将网页分成`10`份, HTML标签的字号为`视口宽度`的`1/10`
+
+### 媒体查询
+* 媒体查询能够`检测视口的宽度`, 然后编写`差异化的CSS样式`
+* 当某个`条件成立`, 执行对应的CSS样式
+```css
+@media (媒体特性) {
+  选择器 {
+    CSS属性
+  }
+}
+@media 关键词 媒体类型 and (媒体特性) {
+  CSS_CODE
+}
+/* and */
+/* only */
+/* not */
+```
+
+### Bootstrap
+```css
+/* 版心居中 */
+<div class="container"></div>
+```
+#### Bootstrap-栅格系统
+* 栅格化是指将整个网页的宽高分成`12`等份, 每个盒子占用对应的份数
+* 例如: 一行排`4`个盒子, 则每个盒子占`3`份即可(12 / 4 = 3)
+```css
+sm
+md
+lg
+xl
+xxl
+/* 列 */
+col
+/* 行 */
+row
+```
+#### Bootstrap-全局样式
+Button类
+* btn: 默认样式
+* btn-success: 成功
+* btn-warning: 警告
+...
+* 按钮尺寸: btn-lg / btn-sm
+
+

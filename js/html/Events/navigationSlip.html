@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box .nav {
+            position: relative;
+            width: 60%;
+            height: 52px;
+            margin: 0 auto;
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        .box ul {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .box ul li {
+            width: 50px;
+            margin-right: 24px;
+            align-content: center;
+        }
+
+        .box ul li a {
+            text-decoration: none;
+            display: block;
+            color: black;
+            width: 50px;
+        }
+
+        .box .line {
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: pink;
+            transition: all .5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">首页</a></li>
+                <li><a href="">首页</a></li>
+                <li><a href="">首页</a></li>
+                <li><a href="">首页</a></li>
+                <li><a href="">首页</a></li>
+            </ul>
+            <div class="line"></div>
+        </div>
+    </div>
+    <script>
+        const nav = document.querySelector('.nav')
+        const line = document.querySelector('.line')
+        const a = document.querySelector('.nav a')
+        moveLine()
+
+        nav.addEventListener('click', function(e) {
+            const tagName = e.target.tagName
+            console.log(`tagName: ${tagName}`)
+            if (tagName === 'A') {
+                e.preventDefault()
+                result = e.target.offsetLeft
+                console.log(`offsetLeft: ${result}`)
+                line.style.transform = `translateX(${result}px)`
+            }
+        })
+
+        window.addEventListener('resize', moveLine)
+
+        function moveLine() {
+            line.style.transform = `translateX(${a.offsetLeft}px)`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box .nav {
+            position: fixed;;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: deeppink;
+            transition: all .5s;
+            font-size: 24px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .box .content {
+            overflow: hidden;
+            margin: 0 auto;
+            width: 80%;
+            height: 1500px;
+            background-color: pink;
+        }
+
+        .item {
+            margin-top: 300px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+            我是顶部标题栏
+        </div>
+        <div class="content">
+            <div class="item">Item</div>
+        </div>
+    </div>
+    <script>
+        const nav = document.querySelector('.nav')
+        const value = document.querySelector('.item')
+
+        window.addEventListener('scroll', function() {
+            const num = document.documentElement.scrollTop
+            nav.style.top = num >= value.offsetTop ? '0' : '-80px'
+        })
+
+    </script>
+</body>
+</html>

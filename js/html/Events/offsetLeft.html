@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            position: relative;
+            background-color: deeppink;
+        }
+
+        .sum {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="sum"></div>
+    </div>
+    <script>
+        let box = document.querySelector('.box')
+        let sum = document.querySelector('.sum')
+        console.log(`box${box.offsetLeft}`)
+        console.log(`sum${sum.offsetLeft}`)
+    </script>
+</body>
+</html>

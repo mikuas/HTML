@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 2370px;
+        }
+
+        .box {
+            position: fixed;
+            top: 128px;
+            right: 128px;
+            width: 50px;
+            height: 256px;
+            transition: all 0.8s;
+            opacity: 0;
+            background-color: skyblue;
+        }
+
+        .box ul {
+            list-style: none;
+            text-align: center;
+            width: 40px;
+            height: 42px;
+            margin-left: 5px;
+        }
+
+        .box ul li a {
+            color: black;;
+            text-decoration: none;
+        }
+
+        .box ul li a:hover {
+            color: deeppink;
+        }
+
+        .box ul li {
+            margin-top: 10px;
+        }
+
+        .content p {
+            position: absolute;
+            left: 24px;
+            font-size: 24px;
+        }
+
+        .content .two {
+            top: 500px;
+        }
+
+        .content .three {
+            top: 1000px;
+        }
+
+        .content .four {
+            top: 1500px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p class="one">新鲜好物</p>
+        <p class="two">人气推荐</p>
+        <p class="three">热门品牌</p>
+        <p class="four">最新专题</p>
+    </div>
+    <div class="box">
+        <ul>
+            <li><a href="#">新鲜好物</a></li>
+            <li><a href="#">人气推荐</a></li>
+            <li><a href="#">热门品牌</a></li>
+            <li><a href="#">最新专题</a></li>
+            <li><a href="#">顶部</a></li>
+        </ul>
+    </div>
+    <script>
+        const box = document.querySelector('.box');
+        window.addEventListener('scroll', function () {
+            let scroll = document.documentElement.scrollTop
+            box.style.opacity = scroll > 300 ? '1' : '0'
+        })
+
+        const element = document.querySelectorAll('.box ul li a')
+        scrolls = [0, 500, 1000, 1500, 0]
+        for (let index = 0; index < element.length; index++) {
+            element[index].addEventListener('click', function (event) {
+                event.preventDefault()
+                document.documentElement.scrollTop = scrolls[index]
+                // document.documentElement.scrollTo(0, scrolls[index])
+            })
+        }
+    </script>
+</body>
+</html>

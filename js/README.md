@@ -16,13 +16,13 @@ JavaScritp的组成
 
 ---
 
-导入js<script src=''></script>
-
-导入module
-
+```javascript
+// 导入js
+<script src=''></script>
+// 导入module
 import { fc, fc } from 'fileName';
-
 const { fc, fc } = require('fileName');
+```
 
 ### 变量(let)
 
@@ -76,16 +76,15 @@ NaN
 * string 字符串型
 >通过单引号 [''] | 双引号 [""] 反引号 [``] 包裹的都叫字符串
 >
->~~~ javascript
->let str = '123456'
->let str1 = "123456"
->let str2 = `123456`
->~~~
+~~~ javascript
+let str = '123456'
+let str1 = "123456"
+let str2 = `123456`
+~~~
 
 * 模板字符串
 
 语法:
-
 ~~~ javascript
 // ``(反引号)
 // 内容拼接变量时 用${}包住变量
@@ -203,17 +202,17 @@ typeof(x)
 #### 分支语句
 * if分支语句 语法:
 
-  ~~~ javascript
-  // 除了 0 所有的数字 字符串 都为真
-
-  if (条件) {
+    ~~~ javascript
+    // 除了 0 所有的数字 字符串 都为真
+    
+    if (条件) {
       满足条件时执行的代码
-  } else if () {
+    } else if () {
        >
-  } else {
+    } else {
       不满足执行的代码
-  }
-  ~~~
+    }
+    ~~~
 
 * 三元运算符 语法: 
 
@@ -322,9 +321,20 @@ array.sort(function (a, b) {
 })
 ~~~
 
+### 遍历数组
+~~~javascript
+let arr = [1, 2, 3, 4, 5]
+for (let value of arr) {
+    console.log(value)
+}
+~~~
+
 ## 函数
 
-声明: function f_name () { ... }
+```javascript
+// 声明: 
+function f_name () { ... }
+```
 >两个相同的函数后面的会覆盖前面的函数
 
 ##### 命名规范
@@ -527,9 +537,6 @@ console.log(obj1.age) // 输出24
 ~~~javascript
 // 通过style属性操作CSS
 object.style.样式属性 = 值
-
-//
-
 ~~~
 
 ### 操作类名(className)操作CSS
@@ -782,7 +789,8 @@ obj.removeEventListener('click', fc)
 ul.addEventListener('click', function () {}) // 执行父级点击事件
 //实现:   事件对象.target.tagName 可以获得真正触发事件的元素
 ~~~
-
+---
+### 其它事件
 ### 页面加载事件
 ~~~javascript
 /*
@@ -800,6 +808,7 @@ img.addEventListener('load', function () {
 /*  不光可以监听整个页面资源加载完毕,也可以针对某个资源绑定load事件  */
 
 // 当初始的HTML文档被完全加载和解析完成之后, DOMContentLoaded 事件被触发 而无需等待样式表,图像等完全加载
+
 /*
 DOMContentLoaded 
 */
@@ -831,7 +840,32 @@ scroollTop
 div.addEventListener('scroll', function () {
     console.log(div.scrollTop, div.scrollLeft)
 })
+
+// 滚动到指定坐标
+div.scrollTo(x, y)
 ~~~
 
+### 页面尺寸事件
+~~~javascript
+// 会在窗口尺寸改变的时候触发
+resize
+window.addEventListener('resize', function () {
+    Code
+})
+// 获取元素宽高 不含边框, margin, 滚动条等
+const div = document.querySelector('div')
+div.clientHeight // height
+div.clientWidth // width
 
+// 获取元素自身宽高,包含元素自身设置的宽高,padding,border
+div.offsetHeight // height
+div.offsetWidth // width
+// 获取的是数值
 
+// 获取位置 获取元素距离自己定位父级元素的左,上距离
+div.offsetLeft // left
+div.offsetTop // top
+
+// 获取元素大小以及相对视口位置
+div.getBoundingClientRect()
+~~~

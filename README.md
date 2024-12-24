@@ -291,8 +291,8 @@ colo文字颜色
 * 继承性:  子级默认继承父级的文字控制属性
 >如果标签自己有样式则生效自己的样式,不继承
 * 层叠性:  
->相同的属性会覆盖 后面的css属性覆盖前面的css属性 \
-不同的属性会叠加 不同的css属性的生i下
+> 相同的属性会覆盖 后面的css属性覆盖前面的css属性 \
+> 不同的属性会叠加 不同的css属性的生i下
 * 优先级:  
 >权重 当一个标签使用了多种选择器时,基于不同种类的选择器匹配规则 \
 >规则:  选择器优先级高的样式生效 \
@@ -336,8 +336,8 @@ colo文字颜色
 | bottom | 底部 |
 
 背景图缩放(background-size)
->关键字: cover 等比例缩放背景图片以完全覆盖背景区,可能背景图片部分看不见 \
-contain 等比例缩放背景图片以完全装入背景区,可能背景区部分空白
+> 关键字: cover 等比例缩放背景图片以完全覆盖背景区,可能背景图片部分看不见 \
+> contain 等比例缩放背景图片以完全装入背景区,可能背景区部分空白
 
 
 背景图固定(background-attachment)
@@ -386,9 +386,48 @@ nth-child(公式)
 |-----------|------------------|
 | E::before | 在E元素里面最前面添加一个伪元素 |
 | E::after  | 在E元素里面最后添加一个伪元素  |
->必须设置content:""属性, 用来设置伪元素的内容 如果没有内容,则引号留空即可 \
-伪元素默认是行内显示模式 \
-权重和标签选择器相同
+> 必须设置content:""属性, 用来设置伪元素的内容 如果没有内容,则引号留空即可 \
+> 伪元素默认是行内显示模式 \
+> 权重和标签选择器相同
+
+
+## 属性选择器
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        input {
+            color: deeppink;
+        }
+        /* 根据不同的值或属性选择 */
+        input[value='114514'] {
+            color: deepskyblue;
+        }
+      
+        input[value] {
+          color: #00ff3b;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" value="114514">
+    <input type="text" value="1919810">
+
+    <!-- 自定义属性 -->
+    <div data-name="name" data-id="name"></div>
+    <!-- 获取自定义属性 -->
+    <script>
+      const div = document.querySelector('div');
+      console.log(div.dataset)
+    </script>
+</body>
+</html>
+```
 
 ---
 
@@ -402,8 +441,8 @@ nth-child(公式)
 >属性值: 边框线粗细 线条样式 颜色(不区分顺序)
 
 单方向边框线
->border-方位名词 \
-属性值: 边框线粗细 线条样式 颜色(不区分顺序)
+> border-方位名词 \
+> 属性值: 边框线粗细 线条样式 颜色(不区分顺序)
 
 | 属性值    | 线条样式 |
 |--------|------|
@@ -412,8 +451,8 @@ nth-child(公式)
 | dotted | 点线   |
 
 ### 盒子模型-内边距(padding)
->作用:  设置内容于盒子边缘之间的距离 \
-属性名:  padding / padding-方位名词
+> 作用:  设置内容于盒子边缘之间的距离 \
+> 属性名:  padding / padding-方位名词
 * 多值写法
 
 | 取值个数 | 示例                           | 含义                      |
@@ -424,8 +463,8 @@ nth-child(公式)
 | 两个值  | padding: 10px 80px           | 上下10px 左右80px           |
 
 ### 盒子模型-尺寸计算
->默认情况:  盒子尺寸 = 内容尺寸 + border尺寸 + 内边距尺 \
-给盒子加border / padding 会撑大盒子 \
+> 默认情况:  盒子尺寸 = 内容尺寸 + border尺寸 + 内边距尺 \
+> 给盒子加border / padding 会撑大盒子 \
 
 解决
 * 手动做减法, 减掉border/padding的尺寸
@@ -454,8 +493,8 @@ nth-child(公式)
 ### 浮动(float)
 
 属性值:
->left:  左对齐 \
-right:  右对齐
+> left:  左对齐 \
+> right:  右对齐
 
 特点:
 1. 浮动后的盒子顶端对齐
@@ -529,8 +568,8 @@ Flex-组成
 | column-sreverse | 垂直方向,从下向上     |
 
 ### 弹性伸缩比(flex)
->作用:  控制弹性盒子的主轴方向的尺寸 \
-属性值: 整数数字 表示占用父级剩余尺寸的份数
+> 作用:  控制弹性盒子的主轴方向的尺寸 \
+> 属性值: 整数数字 表示占用父级剩余尺寸的份数
 
 ### 弹性盒子换行(flex-wrap)
 >弹性盒子可以自动挤压或拉伸,默认情况下,所有弹性盒子都在一行显示 

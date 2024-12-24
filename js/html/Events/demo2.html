@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: #e0dfdf;
+        }
+
+        .main div {
+            margin: 0 auto;
+            width: 75%;
+            height: 500px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .main .one_box {
+            background-color: deepskyblue;
+        }
+
+        .main .two_box {
+            background-color: lime;
+        }
+
+        .main .three_box {
+            background-color: orange;
+        }
+
+        .main .four_box {
+            background-color: deeppink;
+        }
+
+        .main .nav {
+            position: fixed;
+            top: 270px;
+            right: 165px;
+            width: 40px;
+            height: 250px;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .nav ul {
+            list-style: none;
+            font-size: 16px;
+            align-content: center;
+            background-color: white;
+            width: 42px;
+            padding: 10px;
+        }
+
+        .nav ul li {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav ul li:nth-child(-n+4) {
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: deeppink;
+        }
+
+        .active {
+            color: deeppink;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="one_box">
+            内容一
+        </div>
+        <div class="two_box">
+            内容二
+        </div>
+        <div class="three_box">
+            内容三
+        </div>
+        <div class="four_box">
+            内容四
+        </div>
+        <div class="bottom">
+            底部内容
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="javascript:" data-name="one">到内容一</a></li>
+                <li><a href="javascript:" data-name="two">到内容二</a></li>
+                <li><a href="javascript:" data-name="three">到内容三</a></li>
+                <li><a href="javascript:" data-name="four">到内容四</a></li>
+                <li><a href="javascript:" id="backTop">顶部</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 滚动到指定位置显示电梯
+        (function () {
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', function () {
+                const top = document.documentElement.scrollTop;
+                nav.style.opacity = top > 300 ? '1' : '0';
+            })
+        })();
+
+        // 点击电梯导航栏, 滚动到指定位置
+        (function () {
+            const list = document.querySelector('.nav ul');
+            list.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A' && e.target.dataset.name) {
+                    // 获取原来的 active
+                    const old = document.querySelector('.active');
+                    // 如果存在就删除
+                    if (old) old.classList.remove('active')
+                    // 给当前点击的元素添加 active
+                    e.target.classList.toggle('active');
+                    // 获取当前点击元素所对应的盒子, 并滚动到该盒子
+                    const box = document.querySelector(`.${e.target.dataset.name}_box`);
+                    document.documentElement.scrollTop = box.offsetTop
+
+                    console.log(e.target)
+                }
+            })
+
+            const returnTop = document.querySelector('#backTop')
+            returnTop.addEventListener('click', function () {
+                document.documentElement.scrollTop = 0;
+            })
+
+            // 滚动到指定位置, 当前导航栏高亮
+            const box = document.querySelectorAll('.main div:nth-child(-n+4)');
+            const scrolls = [];
+            box.forEach(item => {
+                scrolls.push(item.offsetTop)
+            })
+
+            window.addEventListener('scroll', function () {
+                const n = document.documentElement.scrollTop
+                removeActive();
+                for (let index = 0; index < scrolls.length; index++) {
+                    if (index === scrolls.length - 1) {
+                        if (n >= scrolls[index]) {
+                            document.querySelector(`.nav ul li:nth-child(${index + 1}) a`).classList.add('active')
+                        }
+                    } else if (n >= scrolls[index] && n < scrolls[index + 1]) {
+                        document.querySelector(`.nav ul li:nth-child(${index + 1}) a`).classList.add('active')
+                    }
+                }
+            })
+        })();
+
+        function removeActive() {
+            const old = document.querySelector('.active');
+            if (old) old.classList.remove('active')
+        }
+
+    </script>
+</body>
+</html>

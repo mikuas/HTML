@@ -2,8 +2,8 @@
 
 >是运行在浏览器的一门编程语言
 
-JavaScritp的组成
-* ECMAScritp
+JavaScript的组成
+* ECMAScript
 * Web APIs
     * DOM(文档对象模型)----Document Object Model
 

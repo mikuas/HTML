@@ -2970,7 +2970,7 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
     return sanitizeFunction(unsafeHtml);
   }
   const domParser = new window.DOMParser();
-  const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
+  const createdDocument = domParser.parseFromString(unsafeHtml, 'text/HTML');
   const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
   for (const element of elements) {
     const elementName = element.nodeName.toLowerCase();

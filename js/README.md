@@ -869,3 +869,28 @@ div.offsetTop // top
 // 获取元素大小以及相对视口位置
 div.getBoundingClientRect()
 ~~~
+
+---
+
+### 日期对象
+~~~javascript
+// 实例化
+// 获得当前时间
+let date = new Date()
+console.log(date)
+
+// 获得指定时间
+date = new Date('2022-5-1')
+console.log(date)
+~~~
+
+
+
+
+
+
+
+
+
+
+

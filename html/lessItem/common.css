@@ -1,0 +1,53 @@
+.box {
+  color: pink;
+}
+.box > #span {
+  display: flex;
+}
+.box .box_one {
+  color: red;
+}
+.box .box_one .box_two {
+  color: aqua;
+}
+.box .box_one .box_two a {
+  text-decoration: none;
+  color: pink;
+}
+.box .box_one .box_two p:hover {
+  color: deeppink;
+}
+.box .box_one .box_two:hover {
+  color: skyblue;
+}
+.box .box_one .box_two:active {
+  color: green;
+}
+.box .box_one .box_two:hover {
+  border: none;
+}
+.nav ul li {
+  border: cyan solid 1px;
+}
+.box {
+  color: pink;
+}
+.box .box_one {
+  color: red;
+}
+.box .box_one .box_two {
+  color: aqua;
+}
+.box .box_one .box_two a {
+  text-decoration: none;
+}
+.box .box_one .box_two p:hover {
+  color: deeppink;
+}
+.box .box_one .box_two:hover {
+  color: skyblue;
+}
+.box .box_one .box_two:active {
+  color: green;
+}
+/*# sourceMappingURL=common.css.map */

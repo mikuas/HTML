@@ -1,0 +1,12 @@
+.box {
+  color: pink;
+}
+.box > #span {
+  display: flex;
+}
+.box .box_one {
+  color: red;
+}
+.box > .info {
+  background-color: deeppink;
+}

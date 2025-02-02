@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem('name', 'test')
+        console.log(localStorage.getItem('name'))
+        
+        console.log(localStorage.key)
+        console.log(localStorage.setItem('name', 'new test'))
+        
+        console.log(localStorage.getItem('name'))
+
+        // 存储复杂数据类型
+        const element = {
+            name: 'item1',
+            age: 18,
+            gender: "None",
+            city: 'ShangHai'
+        }
+
+        console.log(element)
+        
+        result = JSON.stringify(element)
+        console.log(result)
+
+        localStorage.setItem('item', result)
+        console.log(localStorage.getItem('item'))
+        console.log(JSON.parse(localStorage.getItem('item')))
+
+
+        const items = [1, 2, 3, 4, 5]
+        console.log(items)
+        localStorage.setItem('item2', items)
+        console.log(localStorage.getItem('item2'))
+        localStorage.setItem('item2', JSON.stringify(items))
+        console.log(JSON.parse(localStorage.getItem('item2')))
+        
+    </script>
+</body>
+</html>

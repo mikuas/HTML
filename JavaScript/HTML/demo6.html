@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 80%;
+            height: 500px;
+            /* background-color: pink; */
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .box ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box ul li {
+            padding-left: 8px;
+        }
+
+        .box ul input {
+            width: 65px;
+            height: 25px;
+        }
+
+        .box ul select {
+            width: 65px;
+            height: 28px;
+        }
+
+        .box ul button {
+            border: none;
+            border-radius: 6px;
+            width: 100px;
+            height: 28px;
+            background-color: deeppink;
+            color: white;
+            cursor: pointer;
+        }
+
+        .infoTable {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .box table {
+            width: 100%;
+            background-color: rgb(249, 252, 255);
+            border-collapse: collapse;
+        }
+
+        .box table thead {
+            background-color: rgb(248, 243, 243);
+        }
+
+        .box table th, td {
+            height: 35px;
+            border: 1px solid rgb(160, 160, 160);
+        }
+
+        .box table tr:hover {
+            background-color: rgb(183, 217, 255);
+        }
+
+        .box tr:nth-child(2n) {
+            background-color: rgb(248, 243, 243);
+        }
+
+        .box h2 {
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: deeppink;
+        }
+
+        .box span {
+            display: inline-block;
+            background-color: rgb(248, 243, 243);
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            margin-bottom: 10px;
+        }
+
+        td a:hover {
+            color: rgb(1, 141, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>新增学员</h2>
+        <form class="info">
+            <ul>
+                <li>
+                    姓名:
+                    <input id='uname' type="text" autocomplete="off">
+                </li>
+                <li>
+                    年龄:
+                    <input id='age' type="number">
+                </li>
+                <li>
+                    性别:
+                    <select name="gender" id="gender">
+                        <option>男</option>
+                        <option>女</option>
+                        <option>其他</option>
+                    </select>
+                </li>
+                <li>
+                    薪资:
+                    <input type="number" id="money">
+                </li>
+                <li>
+                    就业城市:
+                    <select name="city" id="city">
+                        <option>北京</option>
+                        <option>上海</option>
+                        <option>深圳</option>
+                    </select>
+                </li>
+                <li>
+                    <button id="add">提交</button>
+            </ul>
+        </form>
+        <h2>就业榜</h2>
+        <span id="count"></span>
+        <div class="infoTable">
+            <table>
+                <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>资薪</th>
+                    <th>就业城市</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../demo6.js"></script>
+</body>
+</html>

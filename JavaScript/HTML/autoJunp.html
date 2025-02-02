@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent
+            const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+            const ios = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+            if (android || ios) {
+                location.href = 'https://www.bilibili.com'
+            }
+        })()
+    </script>
+</head>
+<body>
+    No AutoJump
+</body>
+</html>

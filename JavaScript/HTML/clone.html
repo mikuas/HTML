@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clone {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            overflow: scroll;
+        }
+
+        #clone {
+            width: 100px;
+            height: 60px;
+            background-color: deeppink;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="clone">
+        <p>Clone me!</p>
+    </div>
+    <button id="clone"></button>
+    <script>
+        const clone = document.querySelector('.clone')
+        const cloneBtn = document.querySelector('#clone')
+
+        cloneBtn.addEventListener('click', () => {
+            const cloneNode = clone.children[0]
+            clone.appendChild(cloneNode.cloneNode(true))
+        })
+    </script>
+</body>
+</html>

@@ -2,3 +2,6 @@ div > .info {
   color: red;
   background-color: skyblue;
 }
+div > .bar {
+  border: navajowhite;
+}

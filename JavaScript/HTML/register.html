@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 328px;
+            margin: 100px auto;
+        }
+
+        .edit {
+            border: 1px solid #c9c9c9;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .edit a {
+            color: #36c5a9;
+            text-decoration: none;
+            padding-left: 30px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            height: 45px;
+            padding-left: 20px;
+        }
+
+        span {
+            font-size: 14px;
+            color: red;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        i {
+            font-size: 12px;
+            margin: 10px 0;
+        }
+
+        i > i {
+            color: deepskyblue;
+        }
+
+        #agree {
+            height: 12px;
+        }
+
+        #submit {
+            width: 328px;
+            height: 45px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            color: white;
+            background-color: #3ebd89;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="edit">
+            <input type="text" name="uname" placeholder="请输入用户名" autocomplete="off">
+        </div>
+        <span id="verifyName"></span>
+
+        <div class="edit">
+            <input type="text" name="phoneNumber" placeholder="请输入手机号" autocomplete="off">
+        </div>
+        <span id="verifyPhone"></span>
+
+        <div class="edit">
+            <input type="text" name="code" placeholder="请输入验证码">
+            <a href='#' class="getCode">获取验证码</a>
+        </div>
+        <span id="verifyCode"></span>
+
+        <div class="edit">
+            <input type="password" name="passwd" placeholder="请输入密码">
+        </div>
+        <span id="verifyPasswd"></span>
+
+        <div class="edit">
+            <input type="password" name="rightPasswd" placeholder="请再次输入密码">
+        </div>
+        <span id="verifyRightPasswd"></span>
+
+        <div class="submit">
+            <i><input type="checkbox" id="agree">已阅读并同意 <i>[用户服务协议]</i></i>
+            <button id="submit">注册</button>
+        </div>
+    </div>
+
+    <script>
+        let flag = true
+        const uname = document.querySelector('[name=uname]')
+        const phoneNumber = document.querySelector('[name=phoneNumber]')
+        const code = document.querySelector('[name=code]')
+        const passwd = document.querySelector('[name=passwd]')
+        const rightPasswd = document.querySelector('[name=rightPasswd]')
+        const codeBtn = document.querySelector('.getCode')
+        const agree = document.querySelector('#agree')
+        const submit = document.querySelector('#submit')
+
+        codeBtn.addEventListener('click', function () {
+            if (flag) {
+                let time = 5
+                flag = false
+                codeBtn.innerHTML = `${time}秒后重新获取`
+                let id = setInterval(function () {
+                    if (time !== 0) {
+                        time--
+                        codeBtn.innerHTML = `${time}秒后重新获取`
+                        return
+                    }
+                    clearInterval(id)
+                    codeBtn.innerHTML = '获取验证码'
+                    flag = true
+                }, 1000)
+            }
+        })
+
+        uname.addEventListener('change', () => verifyName(uname.value))
+        phoneNumber.addEventListener('change', () => verifyPhoneNumber(phoneNumber.value))
+        code.addEventListener('change', () => verifyCode(code.value))
+        passwd.addEventListener('change', () => verifyPasswd(passwd.value))
+        rightPasswd.addEventListener('change', () => verifyRightPasswd(passwd.value, rightPasswd.value))
+        submit.addEventListener('click', () => {
+            if (!agree.checked) {
+                alert('请同意用户协议')
+                return
+            }
+            verifyAll()
+        })
+
+        function verifyName(name) {
+            const span = document.querySelector('#verifyName')
+            if (!/^[a-zA-Z0-9-_]{6,10}$/.test(name)) {
+                span.innerHTML = '输入不合法, 请输入6-10位用户名'
+                return false
+            }
+            span.innerHTML = ''
+            return true
+        }
+
+        function verifyPhoneNumber(phoneNumber) {
+            const span = document.querySelector('#verifyPhone')
+            if (!/^(?:(?:\+|00)86)?1[3-9]\d{9}$/.test(phoneNumber)) {
+                span.innerHTML = '手机号输入有误'
+                return false
+            }
+            span.innerHTML = ''
+            return true
+        }
+
+        function verifyCode(code) {
+            const span = document.querySelector('#verifyCode')
+            if (!/^\d{6}$/.test(code)) {
+                span.innerHTML = '验证码输入有误'
+                return false
+            }
+            span.innerHTML = ''
+            return true
+        }
+
+        function verifyPasswd(password) {
+            const span = document.querySelector('#verifyPasswd')
+            if (!/^[a-zA-Z0-9]{6,16}$/.test(password)) {
+                span.innerHTML = '请输入6-16位密码'
+                return false
+            }
+            span.innerHTML = ''
+            return true
+        }
+
+        function verifyRightPasswd(password, rightPassword) {
+            const span = document.querySelector('#verifyRightPasswd')
+            if (password !== rightPassword) {
+                span.innerHTML = '两次密码不一致'
+                return false
+            }
+            span.innerHTML = ''
+            return true
+        }
+
+        function verifyAll(e) {
+            if (
+                verifyName(uname.value) ||
+                verifyPhoneNumber(phoneNumber.value) ||
+                verifyCode(code.value) ||
+                verifyPasswd(passwd.value) ||
+                verifyRightPasswd(passwd.value, rightPasswd.value)
+            ) {
+
+            }
+        }
+
+    </script>
+</body>
+</html>
